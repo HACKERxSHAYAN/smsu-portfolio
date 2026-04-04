@@ -34,9 +34,17 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://shayan.dev"),
+  metadataBase: new URL("https://shayan.sec"),
   alternates: {
     canonical: "/",
+  },
+  icons: {
+    icon: [
+      { url: '/Cyber-Sheild-cyan-purple.png' },
+      { url: '/favicon.ico', type: 'image/x-icon' }
+    ],
+    apple: '/Cyber-Sheild-cyan-purple.png',
+    shortcut: '/Cyber-Sheild-cyan-purple.png',
   },
   openGraph: {
     type: "website",
@@ -94,6 +102,8 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <head>
+        <link rel="icon" href="/Cyber-Sheild-cyan-purple.png" type="image/png" sizes="32x32" />
+        <link rel="shortcut icon" href="/Cyber-Sheild-cyan-purple.png" />
         <meta name="referrer" content="strict-origin-when-cross-origin" />
         <meta
           name="permissions-policy"

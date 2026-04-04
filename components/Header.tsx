@@ -37,6 +37,7 @@ export default function Header() {
           {/* Logo */}
           <motion.a
             href="#"
+            aria-label="Shayan.sec Home"
             className="flex items-center gap-3 group"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -55,11 +56,12 @@ export default function Header() {
           </motion.a>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-1">
+          <nav className="hidden md:flex items-center gap-1" aria-label="Main navigation">
             {navLinks.map((link, index) => (
               <motion.a
                 key={link.name}
                 href={link.href}
+                aria-label={`Navigate to ${link.name} section`}
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
@@ -80,6 +82,7 @@ export default function Header() {
           {/* CTA Button */}
           <motion.a
             href="#contact"
+            aria-label="Get Secured - Contact Me"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.5 }}
@@ -101,6 +104,8 @@ export default function Header() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={mobileMenuOpen}
             className="md:hidden p-2 text-gray-300 hover:text-white transition-colors"
           >
             {mobileMenuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
@@ -113,11 +118,12 @@ export default function Header() {
           animate={mobileMenuOpen ? { height: 'auto', opacity: 1 } : { height: 0, opacity: 0 }}
           className="md:hidden overflow-hidden"
         >
-          <nav className="py-4 space-y-2">
+          <nav className="py-4 space-y-2" aria-label="Mobile navigation">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
+                aria-label={`Navigate to ${link.name} section`}
                 onClick={() => setMobileMenuOpen(false)}
                 className="block px-4 py-3 text-gray-300 hover:text-white hover:bg-cyber-primary/10 rounded-lg transition-colors font-mono"
               >
@@ -126,6 +132,7 @@ export default function Header() {
             ))}
             <a
               href="#contact"
+              aria-label="Get Secured - Contact Me"
               onClick={() => setMobileMenuOpen(false)}
               className="block px-4 py-3 bg-gradient-to-r from-cyber-primary to-cyber-secondary text-black font-bold rounded-lg text-center"
             >

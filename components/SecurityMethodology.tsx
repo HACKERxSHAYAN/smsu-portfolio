@@ -186,6 +186,7 @@ export default function SecurityMethodology() {
           </p>
           <motion.a
             href="#contact"
+            aria-label="Start Your Security Audit"
             whileHover={{ scale: 1.05, boxShadow: '0 0 40px rgba(0, 243, 255, 0.4)' }}
             whileTap={{ scale: 0.95 }}
             className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-cyber-primary to-cyber-secondary text-black font-bold rounded-xl relative overflow-hidden group"

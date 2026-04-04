@@ -11,6 +11,11 @@
   --cyber-accent: #ff0055;
 }
 
+@font-face {
+  font-family: 'Custom Font';
+  font-display: swap;
+}
+
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(

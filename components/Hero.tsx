@@ -90,7 +90,7 @@ export default function Hero() {
           className="mb-8"
         >
           <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold">
-            <span className="bg-gradient-to-r from-cyber-primary via-cyber-secondary to-cyber-accent bg-clip-text text-transparent bg-[length:200%_auto] animate-[gradient-shift_4s_ease_infinite]">
+            <span className="text-cyan-400">
               Digital Integrity.
             </span>
             <br />
@@ -133,13 +133,14 @@ export default function Hero() {
           className="flex flex-wrap gap-6 justify-center mb-12"
         >
           {/* View Operations - Primary Button */}
-          <PrimaryButton href="#projects">
+          <PrimaryButton href="#projects" aria-label="View Projects">
             VIEW OPERATIONS
           </PrimaryButton>
 
           {/* Initialize Contact - Secondary */}
           <motion.a 
             href="#contact"
+            aria-label="Initialize Contact"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="px-10 py-4 border-2 border-purple-500 text-purple-400 font-bold rounded-lg hover:bg-purple-500/10 transition-all duration-300 relative overflow-hidden group"
@@ -162,15 +163,16 @@ export default function Hero() {
           className="flex justify-center gap-8"
         >
           {[
-            { icon: FaGithub, color: 'hover:text-white', href: 'https://github.com' },
-            { icon: FaLinkedin, color: 'hover:text-[#0077b5]', href: 'https://linkedin.com' },
-            { icon: FaShieldAlt, color: 'hover:text-cyan-400', href: '#' }
+            { icon: FaGithub, color: 'hover:text-white', href: 'https://github.com', label: 'GitHub Profile' },
+            { icon: FaLinkedin, color: 'hover:text-[#0077b5]', href: 'https://linkedin.com', label: 'LinkedIn Profile' },
+            { icon: FaShieldAlt, color: 'hover:text-cyan-400', href: '#', label: 'Security Expertise' }
           ].map((item, index) => (
             <motion.a
               key={index}
               href={item.href}
               target="_blank"
               rel="noopener noreferrer"
+              aria-label={item.label}
               whileHover={{ scale: 1.2, rotate: 5 }}
               whileTap={{ scale: 0.9 }}
               className={`text-3xl text-gray-500 ${item.color} transition-all duration-300 relative`}
@@ -196,6 +198,8 @@ export default function Hero() {
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 1.5, repeat: Infinity }}
           className="text-cyan-400/50 cursor-pointer"
+          role="button"
+          aria-label="Scroll down to content"
         >
           <FaChevronDown size={24} />
         </motion.div>

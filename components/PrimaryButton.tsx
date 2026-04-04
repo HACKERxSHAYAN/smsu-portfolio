@@ -76,7 +76,7 @@ export default function PrimaryButton({ children, href, onClick, className = '' 
 
   if (href) {
     return (
-      <a href={href} className="inline-block">
+      <a href={href} aria-label={typeof children === 'string' ? children : 'View more'} className="inline-block">
         {buttonContent}
       </a>
     );

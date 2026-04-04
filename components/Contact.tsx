@@ -141,43 +141,43 @@ export default function Contact() {
               </motion.div>
               <h3 className="text-2xl font-bold text-white mb-2">TRANSMISSION COMPLETE</h3>
               <p className="text-gray-400 mb-6">Your message has been securely encrypted and sent.</p>
-              <button onClick={() => setFormStatus('idle')} className="text-cyber-primary hover:underline">Send Another Message</button>
+              <button onClick={() => setFormStatus('idle')} aria-label="Send another message" className="text-cyber-primary hover:underline">Send Another Message</button>
             </motion.div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-6 relative z-10" noValidate>
               <div className="grid md:grid-cols-2 gap-6">
                 <motion.div className="space-y-2" initial={{ opacity: 0, x: -20 }} animate={isInView ? { opacity: 1, x: 0 } : {}} transition={{ delay: 0.2 }}>
-                  <label className="text-sm font-mono text-cyber-primary flex items-center gap-2"><FaUser size={12} />IDENTITY</label>
+                  <label htmlFor="contact-name" className="text-sm font-mono text-cyber-primary flex items-center gap-2"><FaUser size={12} />IDENTITY</label>
                   <div className="relative">
-                    <input type="text" name="name" value={formData.name} onChange={handleChange} maxLength={100} required className={`w-full bg-black/50 border ${errors.name ? 'border-red-500' : 'border-gray-700'} rounded-lg p-4 pl-12 text-white focus:outline-none transition-all font-mono`} placeholder="John Doe" autoComplete="name" />
+                    <input id="contact-name" type="text" name="name" value={formData.name} onChange={handleChange} maxLength={100} required aria-describedby="name-error" className={`w-full bg-black/50 border ${errors.name ? 'border-red-500' : 'border-gray-700'} rounded-lg p-4 pl-12 text-white focus:outline-none transition-all font-mono`} placeholder="John Doe" autoComplete="name" />
                     <FaUser className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500" />
                   </div>
-                  {errors.name && <p className="text-red-400 text-xs flex items-center gap-1"><FaExclamationTriangle size={10} />{errors.name}</p>}
+                  {errors.name && <p id="name-error" className="text-red-400 text-xs flex items-center gap-1" role="alert"><FaExclamationTriangle size={10} />{errors.name}</p>}
                 </motion.div>
 
                 <motion.div className="space-y-2" initial={{ opacity: 0, x: 20 }} animate={isInView ? { opacity: 1, x: 0 } : {}} transition={{ delay: 0.3 }}>
-                  <label className="text-sm font-mono text-cyber-primary flex items-center gap-2"><FaEnvelope size={12} />FREQUENCY (EMAIL)</label>
+                  <label htmlFor="contact-email" className="text-sm font-mono text-cyber-primary flex items-center gap-2"><FaEnvelope size={12} />FREQUENCY (EMAIL)</label>
                   <div className="relative">
-                    <input type="email" name="email" value={formData.email} onChange={handleChange} maxLength={254} required className={`w-full bg-black/50 border ${errors.email ? 'border-red-500' : 'border-gray-700'} rounded-lg p-4 pl-12 text-white focus:outline-none transition-all font-mono`} placeholder="john@example.com" autoComplete="email" />
+                    <input id="contact-email" type="email" name="email" value={formData.email} onChange={handleChange} maxLength={254} required aria-describedby="email-error" className={`w-full bg-black/50 border ${errors.email ? 'border-red-500' : 'border-gray-700'} rounded-lg p-4 pl-12 text-white focus:outline-none transition-all font-mono`} placeholder="john@example.com" autoComplete="email" />
                     <FaEnvelope className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500" />
                   </div>
-                  {errors.email && <p className="text-red-400 text-xs flex items-center gap-1"><FaExclamationTriangle size={10} />{errors.email}</p>}
+                  {errors.email && <p id="email-error" className="text-red-400 text-xs flex items-center gap-1" role="alert"><FaExclamationTriangle size={10} />{errors.email}</p>}
                 </motion.div>
               </div>
               
               <motion.div className="space-y-2" initial={{ opacity: 0, y: 20 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ delay: 0.4 }}>
-                <label className="text-sm font-mono text-cyber-primary flex items-center gap-2"><FaComment size={12} />TRANSMISSION</label>
+                <label htmlFor="contact-message" className="text-sm font-mono text-cyber-primary flex items-center gap-2"><FaComment size={12} />TRANSMISSION</label>
                 <div className="relative">
-                  <textarea name="message" value={formData.message} onChange={handleChange} required rows={5} maxLength={5000} className={`w-full bg-black/50 border ${errors.message ? 'border-red-500' : 'border-gray-700'} rounded-lg p-4 pl-12 text-white focus:outline-none transition-all font-mono resize-none`} placeholder="Enter your encrypted message..."></textarea>
+                  <textarea id="contact-message" name="message" value={formData.message} onChange={handleChange} required rows={5} maxLength={5000} aria-describedby="message-error" className={`w-full bg-black/50 border ${errors.message ? 'border-red-500' : 'border-gray-700'} rounded-lg p-4 pl-12 text-white focus:outline-none transition-all font-mono resize-none`} placeholder="Enter your encrypted message..."></textarea>
                   <FaComment className="absolute left-4 top-4 text-gray-500" />
                 </div>
                 <div className="flex justify-between">
-                  {errors.message && <p className="text-red-400 text-xs flex items-center gap-1"><FaExclamationTriangle size={10} />{errors.message}</p>}
-                  <p className="text-gray-500 text-xs ml-auto">{formData.message.length}/5000</p>
+                  {errors.message && <p id="message-error" className="text-red-400 text-xs flex items-center gap-1" role="alert"><FaExclamationTriangle size={10} />{errors.message}</p>}
+                  <p className="text-gray-500 text-xs ml-auto" aria-live="polite">{formData.message.length}/5000</p>
                 </div>
               </motion.div>
 
-              <motion.button type="submit" disabled={formStatus === 'submitting'} initial={{ opacity: 0, y: 20 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ delay: 0.5 }} whileHover={{ scale: formStatus === 'submitting' ? 1 : 1.02 }} whileTap={{ scale: formStatus === 'submitting' ? 1 : 0.98 }} className="w-full py-5 bg-gradient-to-r from-cyber-primary via-white to-cyber-secondary text-black font-bold rounded-lg hover:opacity-90 transition-all shadow-[0_0_30px_rgba(0,243,255,0.3)] disabled:opacity-50 disabled:cursor-not-allowed">
+              <motion.button type="submit" aria-label="Submit secure message" disabled={formStatus === 'submitting'} initial={{ opacity: 0, y: 20 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ delay: 0.5 }} whileHover={{ scale: formStatus === 'submitting' ? 1 : 1.02 }} whileTap={{ scale: formStatus === 'submitting' ? 1 : 0.98 }} className="w-full py-5 bg-gradient-to-r from-cyber-primary via-white to-cyber-secondary text-black font-bold rounded-lg hover:opacity-90 transition-all shadow-[0_0_30px_rgba(0,243,255,0.3)] disabled:opacity-50 disabled:cursor-not-allowed">
                 <span className="relative z-10 flex items-center justify-center gap-3">
                   {formStatus === 'submitting' ? <><motion.div className="w-5 h-5 border-2 border-black/30 border-t-black rounded-full" animate={{ rotate: 360 }} transition={{ duration: 1, repeat: Infinity, ease: "linear" }} />ENCRYPTING...</> : <><FaPaperPlane />TRANSMIT DATA</>}
                 </span>
