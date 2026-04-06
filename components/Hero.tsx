@@ -17,7 +17,7 @@ export default function Hero() {
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
   return (
-    <section ref={containerRef} className="h-screen flex flex-col justify-center items-center relative overflow-hidden px-4 pt-20 md:pt-32">
+    <section ref={containerRef} className="min-h-screen flex flex-col justify-between items-center relative overflow-hidden px-4 pt-32 pb-8">
       {/* Glowing Orb Effects */}
       <motion.div 
         style={{ y }}
@@ -47,33 +47,34 @@ export default function Hero() {
         }}
       />
 
+      {/* Top: Status Badge */}
+      <motion.div 
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.5 }}
+        className="inline-block px-4 py-2 mt-4 border border-cyan-400/50 rounded-full bg-cyan-400/5 backdrop-blur-md"
+      >
+        <div className="flex items-center gap-2 spacing">
+          <motion.span 
+            className="w-2 h-2 rounded-full bg-cyan-400"
+            animate={{ opacity: [1, 0.3, 1] }}
+            transition={{ duration: 1, repeat: Infinity }}
+          />
+          <span className="text-cyan-400 font-mono text-sm tracking-wider">SYSTEM ONLINE // SECURE</span>
+        </div>
+      </motion.div>
+
+      {/* Center: Main Content */}
       <motion.div 
         style={{ opacity }}
         className="text-center z-10 max-w-4xl"
       >
-        {/* Status Badge */}
-        <motion.div 
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5 }}
-          className="inline-block px-4 py-2 mb-8 border border-cyan-400/50 rounded-full bg-cyan-400/5 backdrop-blur-md"
-        >
-          <div className="flex items-center gap-2">
-            <motion.span 
-              className="w-2 h-2 rounded-full bg-cyan-400"
-              animate={{ opacity: [1, 0.3, 1] }}
-              transition={{ duration: 1, repeat: Infinity }}
-            />
-            <span className="text-cyan-400 font-mono text-sm tracking-wider">SYSTEM ONLINE // SECURE</span>
-          </div>
-        </motion.div>
-
         {/* Main Title with Gradient Text */}
         <motion.h1 
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 tracking-tight"
+          className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold mb-6 tracking-tight"
         >
           <span className="text-white">Syed Muhammad</span>
           <br />
@@ -89,7 +90,7 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="mb-8"
         >
-          <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold">
+          <h2 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-bold">
             <span className="text-cyan-400">
               Digital Integrity.
             </span>
@@ -105,7 +106,7 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.8 }}
-          className="text-xl md:text-2xl text-gray-300 mb-10 font-mono h-10"
+          className="text-lg sm:text-xl md:text-2xl text-gray-300 mb-10 font-mono h-10"
         >
           <TypeAnimation
             sequence={[
@@ -130,7 +131,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 1 }}
-          className="flex flex-wrap gap-6 justify-center mb-12"
+          className="flex flex-wrap gap-6 justify-center mb-8"
         >
           {/* View Operations - Primary Button */}
           <PrimaryButton href="#projects" aria-label="View Projects">
@@ -154,7 +155,10 @@ export default function Hero() {
             />
           </motion.a>
         </motion.div>
+      </motion.div>
 
+      {/* Bottom: Social Icons + Scroll Indicator */}
+      <div className="flex flex-col items-center gap-6 pb-8 z-20">
         {/* Social Icons */}
         <motion.div 
           initial={{ opacity: 0 }}
@@ -185,25 +189,24 @@ export default function Hero() {
             </motion.a>
           ))}
         </motion.div>
-      </motion.div>
 
-      {/* Scroll Indicator */}
-      <motion.div 
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.5 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2"
-      >
-        <motion.div
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 1.5, repeat: Infinity }}
+        {/* Scroll Indicator */}
+        <motion.div 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.5 }}
           className="text-cyan-400/50 cursor-pointer"
-          role="button"
-          aria-label="Scroll down to content"
         >
-          <FaChevronDown size={24} />
+          <motion.div
+            animate={{ y: [0, 10, 0] }}
+            transition={{ duration: 1.5, repeat: Infinity }}
+            role="button"
+            aria-label="Scroll down to content"
+          >
+            <FaChevronDown size={24} />
+          </motion.div>
         </motion.div>
-      </motion.div>
+      </div>
 
       {/* Corner Decorations */}
       <div className="absolute top-10 left-10 w-20 h-20 border-l-2 border-t-2 border-cyan-400/30 rounded-tl-lg" />
