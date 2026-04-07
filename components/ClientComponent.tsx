@@ -18,7 +18,7 @@ const ParticleBackground = dynamic(() => import('@/components/ParticleBackground
 
 export default function ClientComponent() {
   return (
-    <main className="relative min-h-screen w-full overflow-x-hidden">
+    <main className="relative min-h-screen w-full overflow-x-hidden bg-[#050505]">
       {/* Particle Background */}
       <ParticleBackground />
       
@@ -56,7 +56,7 @@ export default function ClientComponent() {
             <p className="text-gray-400 text-sm font-mono">
               <span className="text-cyber-primary">{'//'}</span> SYSTEM STATUS: OPERATIONAL
             </p>
-            <p className="text-gray-500 text-xs mt-2">
+            <p className="text-gray-400 text-xs mt-2">
               © 2024 Syed Muhammad Shayan Uddin. All systems secure.
             </p>
           </motion.div>

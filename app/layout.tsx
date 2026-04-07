@@ -1,14 +1,13 @@
 import "./globals.css";
 import { Metadata } from "next";
-import Preloader from "@/components/Preloader";
 
 export const metadata: Metadata = {
   title: {
-    default: "Syed Muhammad Shayan Uddin | Cybersecurity & Automation Expert",
-    template: "%s | Syed Muhammad Shayan Uddin - Cybersecurity & Automation Expert",
+    default: "Syed Muhammad Shayan Uddin | Cybersecurity Expert",
+    template: "%s | Syed Muhammad Shayan Uddin - Cybersecurity Expert",
   },
   description:
-    "Certified Ethical Hacker (CEH) offering malware removal, n8n business automation, and technical SEO expert services. Professional cybersecurity analyst and automation specialist.",
+    "Digital Integrity. Absolute Security. Ethical Hacker, Developer, Tech Enthusiast, and Cybersecurity Expert specializing in penetration testing, network security, and AI-powered defense systems.",
   keywords: [
     "Cybersecurity Analyst",
     "n8n automation specialist",
@@ -49,11 +48,11 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://shayan.dev",
-    title: "Syed Muhammad Shayan Uddin | Cybersecurity & Automation Expert",
+    url: "https://shayan.sec",
+    title: "Syed Muhammad Shayan Uddin | Cybersecurity Expert",
     description:
-      "Certified Ethical Hacker (CEH) offering malware removal, n8n business automation, and technical SEO expert services. Professional cybersecurity analyst and automation specialist.",
-    siteName: "Syed Muhammad Shayan Uddin - Cybersecurity & Automation Expert",
+      "Digital Integrity. Absolute Security. Ethical Hacker, Developer, Tech Enthusiast, and Cybersecurity Expert specializing in penetration testing, network security, and AI-powered defense systems.",
+    siteName: "Syed Muhammad Shayan Uddin - Cybersecurity Expert",
     images: [
       {
         url: "/og-image.png",
@@ -65,9 +64,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Syed Muhammad Shayan Uddin | Cybersecurity & Automation Expert",
+    title: "Syed Muhammad Shayan Uddin | Cybersecurity Expert",
     description:
-      "Certified Ethical Hacker (CEH) offering malware removal, n8n business automation, and technical SEO expert services.",
+      "Digital Integrity. Absolute Security. Ethical Hacker, Developer, Tech Enthusiast, and Cybersecurity Expert.",
     images: ["/og-image.png"],
     creator: "@shayandev",
   },
@@ -109,9 +108,9 @@ export default function RootLayout({
           name="permissions-policy"
           content="camera=(), microphone=(), geolocation=()"
         />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
-      <body className="bg-cyber-black text-white antialiased font-sans">
-        <Preloader />
+      <body className="bg-[#050505] text-white antialiased font-sans min-h-screen">
         {children}
       </body>
     </html>

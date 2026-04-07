@@ -2,49 +2,71 @@
 
 import { TypeAnimation } from 'react-type-animation';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { FaGithub, FaLinkedin, FaShieldAlt, FaChevronDown } from 'react-icons/fa';
-import { useRef } from 'react';
+import { IconType } from 'react-icons';
+import { FaGithub, FaLinkedin, FaChevronDown } from 'react-icons/fa';
+import { useRef, useState, useEffect } from 'react';
+import Image from 'next/image';
 import PrimaryButton from './PrimaryButton';
 
 export default function Hero() {
   const containerRef = useRef(null);
+  const [isMobile, setIsMobile] = useState(false);
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end start"]
   });
 
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
+  const socialLinks: { icon?: IconType; isImage?: boolean; color?: string; href: string; label: string }[] = [
+    { icon: FaGithub, color: 'hover:text-white', href: 'https://github.com', label: 'GitHub Profile' },
+    { icon: FaLinkedin, color: 'hover:text-[#0077b5]', href: 'https://linkedin.com', label: 'LinkedIn Profile' },
+    { isImage: true, href: '#', label: 'Security Expertise' }
+  ];
+
   return (
-    <section ref={containerRef} className="min-h-screen flex flex-col justify-between items-center relative overflow-hidden px-4 pt-32 pb-8">
-      {/* Glowing Orb Effects */}
+    <section ref={containerRef} className="min-h-screen flex flex-col justify-between items-center relative overflow-hidden px-4 pt-32 pb-8 bg-[#050505]">
+      {/* Glowing Orb Effects - GPU accelerated, static on mobile */}
       <motion.div 
         style={{ y }}
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-cyan-500/10 rounded-full blur-[150px] -z-10"
-        animate={{
+        className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-cyan-500/10 rounded-full -z-10 ${isMobile ? 'w-[200px] h-[200px] blur-[40px]' : 'w-[600px] h-[600px] blur-[150px]'}`}
+        animate={isMobile ? {
+          opacity: [0.3, 0.4, 0.3],
+        } : {
           scale: [1, 1.1, 1],
           opacity: [0.3, 0.5, 0.3],
         }}
         transition={{
-          duration: 4,
+          duration: isMobile ? 3 : 4,
           repeat: Infinity,
           ease: "easeInOut"
         }}
+        layout={false}
       />
       
       <motion.div 
-        className="absolute top-1/3 right-1/4 w-[400px] h-[400px] bg-purple-500/10 rounded-full blur-[120px] -z-10"
-        animate={{
+        className={`absolute top-1/3 right-1/4 bg-purple-500/10 rounded-full -z-10 ${isMobile ? 'w-[150px] h-[150px] blur-[40px]' : 'w-[400px] h-[400px] blur-[120px]'}`}
+        animate={isMobile ? {
+          opacity: [0.2, 0.3, 0.2],
+        } : {
           scale: [1.2, 1, 1.2],
           opacity: [0.2, 0.4, 0.2],
         }}
         transition={{
-          duration: 5,
+          duration: isMobile ? 3 : 5,
           repeat: Infinity,
           ease: "easeInOut",
           delay: 1
         }}
+        layout={false}
       />
 
       {/* Top: Status Badge */}
@@ -52,7 +74,7 @@ export default function Hero() {
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5 }}
-        className="inline-block px-4 py-2 mt-4 border border-cyan-400/50 rounded-full bg-cyan-400/5 backdrop-blur-md"
+        className="inline-block px-4 py-2 mt-4 border border-cyan-400/50 rounded-full bg-cyan-400/5 backdrop-blur-sm"
       >
         <div className="flex items-center gap-2 spacing">
           <motion.span 
@@ -67,13 +89,14 @@ export default function Hero() {
       {/* Center: Main Content */}
       <motion.div 
         style={{ opacity }}
-        className="text-center z-10 max-w-4xl"
+        className="text-center z-10 max-w-4xl will-change-opacity"
       >
         {/* Main Title with Gradient Text */}
         <motion.h1 
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
+          layout="position"
           className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold mb-6 tracking-tight"
         >
           <span className="text-white">Syed Muhammad</span>
@@ -88,6 +111,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
+          layout="position"
           className="mb-8"
         >
           <h2 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-bold">
@@ -95,7 +119,7 @@ export default function Hero() {
               Digital Integrity.
             </span>
             <br />
-            <span className="bg-gradient-to-r from-cyber-accent via-cyber-primary to-cyber-secondary bg-clip-text text-transparent bg-[length:200%_auto] animate-[gradient-shift_4s_ease_infinite] [animation-delay:0.5s]">
+            <span className="bg-gradient-to-r from-pink-500 via-cyan-500 to-purple-500 bg-clip-text text-transparent bg-[length:200%_auto] animate-[gradient-shift_4s_ease_infinite] [animation-delay:0.5s]">
               Absolute Security.
             </span>
           </h2>
@@ -166,27 +190,43 @@ export default function Hero() {
           transition={{ duration: 0.5, delay: 1.2 }}
           className="flex justify-center gap-8"
         >
-          {[
-            { icon: FaGithub, color: 'hover:text-white', href: 'https://github.com', label: 'GitHub Profile' },
-            { icon: FaLinkedin, color: 'hover:text-[#0077b5]', href: 'https://linkedin.com', label: 'LinkedIn Profile' },
-            { icon: FaShieldAlt, color: 'hover:text-cyan-400', href: '#', label: 'Security Expertise' }
-          ].map((item, index) => (
-            <motion.a
-              key={index}
-              href={item.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={item.label}
-              whileHover={{ scale: 1.2, rotate: 5 }}
-              whileTap={{ scale: 0.9 }}
-              className={`text-3xl text-gray-500 ${item.color} transition-all duration-300 relative`}
-            >
-              <item.icon />
-              <motion.div
-                className="absolute -inset-2 bg-currentColor opacity-0 rounded-full blur-lg"
-                whileHover={{ opacity: 0.3 }}
-              />
-            </motion.a>
+          {socialLinks.map((item, index) => (
+            item.isImage ? (
+              <motion.a
+                key={index}
+                href={item.href}
+                aria-label={item.label}
+                whileHover={{ scale: 1.2, rotate: 5 }}
+                whileTap={{ scale: 0.9 }}
+                className="relative"
+              >
+                <Image 
+                  src="/Cyber-Sheild-cyan-purple.png" 
+                  alt="Cyber Shield Logo" 
+                  width={32} 
+                  height={32}
+                  priority={true}
+                  className="object-contain"
+                />
+              </motion.a>
+            ) : (
+              <motion.a
+                key={index}
+                href={item.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={item.label}
+                whileHover={{ scale: 1.2, rotate: 5 }}
+                whileTap={{ scale: 0.9 }}
+                className={`text-3xl text-gray-400 ${item.color} transition-all duration-300 relative`}
+              >
+                {item.icon && <item.icon />}
+                <motion.div
+                  className="absolute -inset-2 bg-currentColor opacity-0 rounded-full blur-lg"
+                  whileHover={{ opacity: 0.3 }}
+                />
+              </motion.a>
+            )
           ))}
         </motion.div>
 
@@ -209,10 +249,10 @@ export default function Hero() {
       </div>
 
       {/* Corner Decorations */}
-      <div className="absolute top-10 left-10 w-20 h-20 border-l-2 border-t-2 border-cyan-400/30 rounded-tl-lg" />
-      <div className="absolute top-10 right-10 w-20 h-20 border-r-2 border-t-2 border-cyan-400/30 rounded-tr-lg" />
-      <div className="absolute bottom-10 left-10 w-20 h-20 border-l-2 border-b-2 border-cyan-400/30 rounded-bl-lg" />
-      <div className="absolute bottom-10 right-10 w-20 h-20 border-r-2 border-b-2 border-cyan-400/30 rounded-br-lg" />
+      <div className="absolute top-10 left-10 w-20 h-20 border-l-2 border-t-2 border-cyan-400/30 rounded-tl-lg pointer-events-none" />
+      <div className="absolute top-10 right-10 w-20 h-20 border-r-2 border-t-2 border-cyan-400/30 rounded-tr-lg pointer-events-none" />
+      <div className="absolute bottom-10 left-10 w-20 h-20 border-l-2 border-b-2 border-cyan-400/30 rounded-bl-lg pointer-events-none" />
+      <div className="absolute bottom-10 right-10 w-20 h-20 border-r-2 border-b-2 border-cyan-400/30 rounded-br-lg pointer-events-none" />
     </section>
   );
 }

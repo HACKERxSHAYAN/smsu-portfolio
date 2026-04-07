@@ -117,7 +117,7 @@ export default function Contact() {
     <section id="contact" className="py-24 px-4 bg-gradient-to-t from-black via-cyber-dark/50 to-transparent relative overflow-hidden">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-cyber-primary to-transparent opacity-50" />
       <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-cyber-secondary to-transparent opacity-50" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-cyber-primary/5 rounded-full blur-[150px] -z-10" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-cyber-primary/5 rounded-full blur-[100px] -z-10" />
 
       <div ref={ref} className="max-w-4xl mx-auto">
         <SectionTitle title="// ESTABLISH UPLINK" subtitle="Send a Secure Message" />
@@ -150,7 +150,7 @@ export default function Contact() {
                   <label htmlFor="contact-name" className="text-sm font-mono text-cyber-primary flex items-center gap-2"><FaUser size={12} />IDENTITY</label>
                   <div className="relative">
                     <input id="contact-name" type="text" name="name" value={formData.name} onChange={handleChange} maxLength={100} required aria-describedby="name-error" className={`w-full bg-black/50 border ${errors.name ? 'border-red-500' : 'border-gray-700'} rounded-lg p-4 pl-12 text-white focus:outline-none transition-all font-mono`} placeholder="John Doe" autoComplete="name" />
-                    <FaUser className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500" />
+                    <FaUser className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" aria-hidden="true" />
                   </div>
                   {errors.name && <p id="name-error" className="text-red-400 text-xs flex items-center gap-1" role="alert"><FaExclamationTriangle size={10} />{errors.name}</p>}
                 </motion.div>
@@ -159,7 +159,7 @@ export default function Contact() {
                   <label htmlFor="contact-email" className="text-sm font-mono text-cyber-primary flex items-center gap-2"><FaEnvelope size={12} />FREQUENCY (EMAIL)</label>
                   <div className="relative">
                     <input id="contact-email" type="email" name="email" value={formData.email} onChange={handleChange} maxLength={254} required aria-describedby="email-error" className={`w-full bg-black/50 border ${errors.email ? 'border-red-500' : 'border-gray-700'} rounded-lg p-4 pl-12 text-white focus:outline-none transition-all font-mono`} placeholder="john@example.com" autoComplete="email" />
-                    <FaEnvelope className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500" />
+                    <FaEnvelope className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" aria-hidden="true" />
                   </div>
                   {errors.email && <p id="email-error" className="text-red-400 text-xs flex items-center gap-1" role="alert"><FaExclamationTriangle size={10} />{errors.email}</p>}
                 </motion.div>
@@ -169,11 +169,11 @@ export default function Contact() {
                 <label htmlFor="contact-message" className="text-sm font-mono text-cyber-primary flex items-center gap-2"><FaComment size={12} />TRANSMISSION</label>
                 <div className="relative">
                   <textarea id="contact-message" name="message" value={formData.message} onChange={handleChange} required rows={5} maxLength={5000} aria-describedby="message-error" className={`w-full bg-black/50 border ${errors.message ? 'border-red-500' : 'border-gray-700'} rounded-lg p-4 pl-12 text-white focus:outline-none transition-all font-mono resize-none`} placeholder="Enter your encrypted message..."></textarea>
-                  <FaComment className="absolute left-4 top-4 text-gray-500" />
+                  <FaComment className="absolute left-4 top-4 text-gray-400" aria-hidden="true" />
                 </div>
                 <div className="flex justify-between">
                   {errors.message && <p id="message-error" className="text-red-400 text-xs flex items-center gap-1" role="alert"><FaExclamationTriangle size={10} />{errors.message}</p>}
-                  <p className="text-gray-500 text-xs ml-auto" aria-live="polite">{formData.message.length}/5000</p>
+                  <p className="text-gray-400 text-xs ml-auto" aria-live="polite">{formData.message.length}/5000</p>
                 </div>
               </motion.div>
 
@@ -186,7 +186,7 @@ export default function Contact() {
           )}
         </motion.div>
 
-        <motion.p initial={{ opacity: 0 }} animate={isInView ? { opacity: 1 } : {}} transition={{ delay: 0.8 }} className="text-center text-gray-500 mt-8 font-mono text-xs flex items-center justify-center gap-4">
+        <motion.p initial={{ opacity: 0 }} animate={isInView ? { opacity: 1 } : {}} transition={{ delay: 0.8 }} className="text-center text-gray-400 mt-8 font-mono text-xs flex items-center justify-center gap-4">
           <span className="flex items-center gap-2"><span className="w-2 h-2 bg-cyber-primary rounded-full animate-pulse" />SECURE CONNECTION</span><span className="text-gray-700">//</span><span>END-TO-END ENCRYPTED</span>
         </motion.p>
 
@@ -194,7 +194,7 @@ export default function Contact() {
           {[{ label: "Email", value: "shayanuddin4589@gmail.com", icon: FaEnvelope }, { label: "Location", value: "Karachi, Pakistan", icon: FaUser }, { label: "Status", value: "Available", icon: FaCheck }].map((item, index) => (
             <div key={index} className="glass-panel p-4 rounded-xl text-center border border-gray-800 hover:border-cyber-primary/30 transition-colors">
               <item.icon className="text-cyber-primary mx-auto mb-2" />
-              <p className="text-xs text-gray-500 font-mono">{item.label}</p>
+              <p className="text-xs text-gray-400 font-mono">{item.label}</p>
               <p className="text-white font-medium text-sm">{item.value}</p>
             </div>
           ))}

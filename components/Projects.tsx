@@ -88,7 +88,7 @@ export default function Projects() {
                 <motion.span
                   initial={{ opacity: 0, x: -10 }}
                   whileHover={{ opacity: 1, x: 0 }}
-                  className="text-xs text-gray-500"
+                  className="text-xs text-gray-400"
                 >
                   →
                 </motion.span>

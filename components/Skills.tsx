@@ -118,7 +118,7 @@ export default function Skills() {
 
               {/* Percentage */}
               <motion.span 
-                className="font-mono text-xs text-gray-500 group-hover:text-white relative z-10"
+                className="font-mono text-xs text-gray-400 group-hover:text-white relative z-10"
                 initial={{ opacity: 0 }}
                 animate={isInView ? { opacity: 1 } : {}}
                 transition={{ delay: 1 + index * 0.05 }}
