@@ -1,12 +1,12 @@
 // Server-side metadata export
 export const metadata = {
-  title: 'Syed Muhammad Shayan Uddin | Cybersecurity & AI Expert',
-  description: 'Portfolio of a Cybersecurity Enthusiast, Ethical Hacker, and AI Learner. Specializing in penetration testing, network security, and AI-powered defense systems.',
-  keywords: ['Cybersecurity', 'Ethical Hacker', 'CEH', 'AI', 'Penetration Testing', 'Network Security', 'Portfolio'],
+  title: 'SYED MUHAMMAD SHAYAN UDDIN // CYBERSECURITY ANALYST',
+  description: 'CEH Certified Cybersecurity Analyst | Absolute Security. Specialized in penetration testing, network security, and ethical hacking.',
+  keywords: ['Cybersecurity', 'Ethical Hacker', 'CEH', 'Certified Ethical Hacker', 'Penetration Testing', 'Network Security', 'Portfolio', 'Security Analyst'],
   authors: [{ name: 'Syed Muhammad Shayan Uddin' }],
   openGraph: {
-    title: 'Syed Muhammad Shayan Uddin | Cybersecurity & AI Expert',
-    description: 'Portfolio of a Cybersecurity Enthusiast, Ethical Hacker, and AI Learner.',
+    title: 'SYED MUHAMMAD SHAYAN UDDIN // CYBERSECURITY ANALYST',
+    description: 'CEH Certified Cybersecurity Analyst | Absolute Security.',
     type: 'website',
   },
   robots: {

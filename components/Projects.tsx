@@ -31,8 +31,8 @@ const projects = [
 
 const certs = [
   { name: "Certified Ethical Hacker (CEH)", issuer: "EC-Council", year: "2024", color: "#00f3ff" },
-  { name: "Advent of Cyber 2023", issuer: "TryHackMe", year: "2023", color: "#bd00ff" },
-  { name: "Ethical Hacker Beginner", issuer: "Udemy", year: "2023", color: "#ff0055" }
+  { name: "Cisco Certified Network Associate (CCNA)", issuer: "Cisco Networking Academy", year: "2025", color: "#bd00ff" },
+  { name: "Certified Red Teaming Operation Management", issuer: "Red Team Leaders", year: "2025", color: "#ff0055" }
 ];
 
 export default function Projects() {

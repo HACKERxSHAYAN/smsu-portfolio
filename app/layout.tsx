@@ -3,27 +3,26 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: {
-    default: "Syed Muhammad Shayan Uddin | Cybersecurity Expert",
-    template: "%s | Syed Muhammad Shayan Uddin - Cybersecurity Expert",
+    default: "SYED MUHAMMAD SHAYAN UDDIN // CYBERSECURITY ANALYST",
+    template: "%s | SYED MUHAMMAD SHAYAN UDDIN // CYBERSECURITY ANALYST",
   },
   description:
-    "Digital Integrity. Absolute Security. Ethical Hacker, Developer, Tech Enthusiast, and Cybersecurity Expert specializing in penetration testing, network security, and AI-powered defense systems.",
+    "CEH Certified Cybersecurity Analyst | Absolute Security. Specialized in penetration testing, network security, and ethical hacking. Protecting digital assets with industry-leading security practices.",
   keywords: [
     "Cybersecurity Analyst",
+    "CEH Certified",
+    "Certified Ethical Hacker",
+    "Penetration Testing",
+    "Network Security",
+    "Ethical Hacker",
+    "Malware Removal",
+    "Security Audit",
+    "Information Security",
+    "Cyber Defense",
+    "Security Analyst",
     "n8n automation specialist",
     "malware cleanup services",
     "WhatsApp bot developer",
-    "Next.js security audit",
-    "CEH professional",
-    "Certified Ethical Hacker",
-    "Malware Removal",
-    "n8n Business Automation",
-    "Technical SEO Expert",
-    "Penetration Testing",
-    "Network Security",
-    "AI Security",
-    "Ethical Hacker",
-    "Security Automation",
   ],
   authors: [{ name: "Syed Muhammad Shayan Uddin" }],
   creator: "Syed Muhammad Shayan Uddin",
@@ -39,20 +38,24 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: '/Cyber-Sheild-cyan-purple.png' },
+      { url: '/Cyber-Sheild-cyan-purple.png', type: 'image/png', sizes: '32x32' },
       { url: '/favicon.ico', type: 'image/x-icon' }
     ],
-    apple: '/Cyber-Sheild-cyan-purple.png',
+    apple: {
+      url: '/Cyber-Sheild-cyan-purple.png',
+      sizes: '180x180',
+      type: 'image/png'
+    },
     shortcut: '/Cyber-Sheild-cyan-purple.png',
   },
   openGraph: {
     type: "website",
     locale: "en_US",
     url: "https://shayan.sec",
-    title: "Syed Muhammad Shayan Uddin | Cybersecurity Expert",
+    title: "SYED MUHAMMAD SHAYAN UDDIN // CYBERSECURITY ANALYST",
     description:
-      "Digital Integrity. Absolute Security. Ethical Hacker, Developer, Tech Enthusiast, and Cybersecurity Expert specializing in penetration testing, network security, and AI-powered defense systems.",
-    siteName: "Syed Muhammad Shayan Uddin - Cybersecurity Expert",
+      "CEH Certified Cybersecurity Analyst | Absolute Security. Specialized in penetration testing, network security, and ethical hacking.",
+    siteName: "Syed Muhammad Shayan Uddin // Cybersecurity Analyst",
     images: [
       {
         url: "/og-image.png",
@@ -64,9 +67,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Syed Muhammad Shayan Uddin | Cybersecurity Expert",
+    title: "SYED MUHAMMAD SHAYAN UDDIN // CYBERSECURITY ANALYST",
     description:
-      "Digital Integrity. Absolute Security. Ethical Hacker, Developer, Tech Enthusiast, and Cybersecurity Expert.",
+      "CEH Certified Cybersecurity Analyst | Absolute Security. Specialized in penetration testing and network security.",
     images: ["/og-image.png"],
     creator: "@shayandev",
   },

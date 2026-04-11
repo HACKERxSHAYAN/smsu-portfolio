@@ -175,10 +175,10 @@ export default function About() {
         className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16"
       >
         {[
-          { number: "2+", label: "Years Experience", color: "#00f3ff" },
+          { number: "3+", label: "Years Experience", color: "#00f3ff" },
           { number: "50+", label: "Tools Mastered", color: "#bd00ff" },
-          { number: "20+", label: "Projects Completed", color: "#ff0055" },
-          { number: "3+", label: "Certifications", color: "#00f3ff" },
+          { number: "3+", label: "Projects Completed", color: "#ff0055" },
+          { number: "20+", label: "Certifications", color: "#00f3ff" },
         ].map((stat, index) => (
           <motion.div
             key={index}
