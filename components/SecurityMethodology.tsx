@@ -63,7 +63,8 @@ export default function SecurityMethodology() {
       <div ref={ref} className="max-w-7xl mx-auto">
         <SectionTitle 
           title="// SECURITY METHODOLOGY" 
-          subtitle="Our Proven Approach to Digital Defense" 
+          subtitle="Our Proven Approach to Digital Defense"
+          description="Syed Muhammad Shayan Uddin follows industry-standard security methodology including reconnaissance, vulnerability assessment, penetration testing, security hardening, incident response, and continuous monitoring to deliver comprehensive cybersecurity services."
         />
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">

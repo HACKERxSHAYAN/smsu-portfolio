@@ -45,7 +45,11 @@ export default function Skills() {
       <div className="absolute bottom-0 right-0 w-80 h-80 bg-cyber-secondary/5 rounded-full blur-[120px] -z-10" />
 
       <div ref={ref} className="max-w-7xl mx-auto">
-        <SectionTitle title="// TECHNICAL ARSENAL" subtitle="Tools & Technologies" />
+        <SectionTitle 
+          title="// TECHNICAL ARSENAL" 
+          subtitle="Tools & Technologies"
+          description="Syed Muhammad Shayan Uddin demonstrates expertise in Kali Linux, Metasploit, Burp Suite, Python, C/C++, JavaScript, React/Next.js, networking, Linux administration, and security tools essential for comprehensive penetration testing and security auditing."
+        />
         
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {skills.map((skill, index) => (

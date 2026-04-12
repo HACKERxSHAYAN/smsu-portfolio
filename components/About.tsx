@@ -22,7 +22,11 @@ export default function About() {
       <div className="absolute top-0 right-0 w-96 h-96 bg-cyber-secondary/5 rounded-full blur-[150px] -z-10" />
       <div className="absolute bottom-0 left-0 w-64 h-64 bg-cyber-primary/5 rounded-full blur-[100px] -z-10" />
 
-      <SectionTitle title="// ABOUT THE OPERATOR" subtitle="Mission Profile & Capabilities" />
+      <SectionTitle 
+        title="// ABOUT THE OPERATOR" 
+        subtitle="Mission Profile & Capabilities"
+        description="Syed Muhammad Shayan Uddin is a CEH Certified Cybersecurity Analyst specializing in penetration testing, network security, and ethical hacking. With over 3 years of experience, he provides comprehensive security auditing, vulnerability assessment, and malware removal services to protect digital assets."
+      />
 
       <div ref={ref} className="grid lg:grid-cols-2 gap-12 items-start">
         {/* Main Bio Card */}

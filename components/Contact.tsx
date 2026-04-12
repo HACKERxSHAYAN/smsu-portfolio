@@ -120,7 +120,11 @@ export default function Contact() {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-cyber-primary/5 rounded-full blur-[100px] -z-10" />
 
       <div ref={ref} className="max-w-4xl mx-auto">
-        <SectionTitle title="// ESTABLISH UPLINK" subtitle="Send a Secure Message" />
+        <SectionTitle 
+        title="// ESTABLISH UPLINK" 
+        subtitle="Send a Secure Message"
+        description="Contact Syed Muhammad Shayan Uddin for professional cybersecurity services including penetration testing, vulnerability assessment, network security audits, and malware removal. Based in Karachi, Pakistan, available for both local and international security consultations."
+      />
         
         <motion.div 
           initial={{ opacity: 0, y: 30 }}

@@ -18,7 +18,7 @@ const ParticleBackground = dynamic(() => import('@/components/ParticleBackground
 
 export default function ClientComponent() {
   return (
-    <main className="relative min-h-screen w-full overflow-x-hidden bg-[#050505]">
+    <div className="relative min-h-screen w-full overflow-x-hidden bg-[#050505]">
       {/* Particle Background */}
       <ParticleBackground />
       
@@ -26,24 +26,36 @@ export default function ClientComponent() {
       <Header />
       
       {/* Main Content */}
-      <div className="relative z-10">
+      <main className="relative z-10">
         {/* Hero Section */}
-        <Hero />
+        <section aria-label="Hero">
+          <Hero />
+        </section>
         
         {/* About Section */}
-        <About />
+        <section aria-label="About">
+          <About />
+        </section>
         
         {/* Security Methodology Section */}
-        <SecurityMethodology />
+        <section aria-label="Security Methodology">
+          <SecurityMethodology />
+        </section>
         
         {/* Skills Section */}
-        <Skills />
+        <section aria-label="Skills">
+          <Skills />
+        </section>
         
         {/* Projects Section */}
-        <Projects />
+        <section aria-label="Projects">
+          <Projects />
+        </section>
         
         {/* Contact Section */}
-        <Contact />
+        <section aria-label="Contact">
+          <Contact />
+        </section>
         
         {/* Footer */}
         <footer className="py-8 text-center border-t border-gray-800/50">
@@ -61,7 +73,7 @@ export default function ClientComponent() {
             </p>
           </motion.div>
         </footer>
-      </div>
-    </main>
+      </main>
+    </div>
   );
 }

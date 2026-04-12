@@ -45,7 +45,11 @@ export default function Projects() {
       <div className="absolute top-0 left-1/4 w-96 h-96 bg-cyber-primary/5 rounded-full blur-[150px] -z-10" />
       <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-cyber-secondary/5 rounded-full blur-[120px] -z-10" />
 
-      <SectionTitle title="// OPERATIONS LOG" subtitle="Projects & Certifications" />
+      <SectionTitle 
+        title="// OPERATIONS LOG" 
+        subtitle="Projects & Certifications"
+        description="Syed Muhammad Shayan Uddin has completed multiple security projects including a Network Vulnerability Scanner, AI Phishing Detector, and Secure Chat Application. He holds CEH, CCNA, and Certified Red Teaming credentials, demonstrating advanced penetration testing and network security expertise."
+      />
 
       <div ref={ref} className="grid lg:grid-cols-3 gap-8 mb-20">
         {projects.map((project, i) => (

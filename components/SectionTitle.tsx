@@ -3,7 +3,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
-export default function SectionTitle({ title, subtitle }: { title: string; subtitle?: string }) {
+export default function SectionTitle({ title, subtitle, description }: { title: string; subtitle?: string; description?: string }) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-50px" });
 
@@ -46,6 +46,17 @@ export default function SectionTitle({ title, subtitle }: { title: string; subti
           <span className="w-8 h-px bg-gradient-to-r from-transparent to-cyber-primary" />
           {subtitle}
           <span className="w-8 h-px bg-gradient-to-l from-transparent to-cyber-secondary" />
+        </motion.p>
+      )}
+
+      {description && (
+        <motion.p 
+          initial={{ opacity: 0 }}
+          animate={isInView ? { opacity: 1 } : {}}
+          transition={{ delay: 0.5 }}
+          className="text-gray-300 mt-6 text-sm md:text-base max-w-3xl mx-auto leading-relaxed"
+        >
+          {description}
         </motion.p>
       )}
 
