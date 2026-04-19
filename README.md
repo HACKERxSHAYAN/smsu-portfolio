@@ -1,32 +1,46 @@
-# 👋 Hi, I'm Syed Muhammed Shayan Uddin
+# 🛡️ Syed Muhammad Shayan Uddin
+### **Cybersecurity Analyst | Certified Ethical Hacker (CEH) | AI Security Researcher**
+**Karachi, Pakistan 🇵🇰 | ACCP AI Specialist @ Aptech**
 
-🚀 Cybersecurity Enthusiast | 🤖 AI Learner | 💻 Developer  
-CEH Certified | Offensive and Defensive Security Focused
+---
 
-## 🧠 About Me
+## 🧠 Mission Protocol
+I am a specialized Security Professional focused on the intersection of **Offensive Security** and **Artificial Intelligence**. Currently executing an Advanced Diploma in Software Engineering with a specialization in AI, I bridge the gap between low-level system exploitation and intelligent defensive automation.
 
-I am a passionate Cybersecurity enthusiast from Karachi, Pakistan 🇵🇰 
-with a strong focus on Offensive Security and AI-powered security systems.
+---
 
-I aim to combine Artificial Intelligence with Cybersecurity to build
-next-generation intelligent defense and attack simulation systems.
+## 🚀 The Trinity Projects (Current Operations)
+*Directly developed for real-world security applications:*
 
-## 🛠 Technical Skills
+1.  **[Network Vulnerability Scanner](https://github.com/HACKERxSHAYAN/Network-Vuln-Scanner)**: Stealth port-scanning tool built with Python/Scapy for real-time CVE detection.
+2.  **[AI Phishing Guard](https://github.com/HACKERxSHAYAN/AI-Phishing-Detector)**: NLP-driven Machine Learning model trained to detect malicious social engineering patterns with 94%+ accuracy.
+3.  **[Secure Vault Chat](https://github.com/HACKERxSHAYAN/Secure-Vault-Chat-E2EE)**: C++ Client-Server architecture utilizing custom XOR-Rotation encryption for Zero-Knowledge communication.
 
-🔹 Cybersecurity
-- Penetration Testing
-- Vulnerability Assessment
-- Network Security
-- Basic Cryptography
+---
 
-🔹 Tools
-- Kali Linux
-- Metasploit Framework
-- Nmap
-- Burp Suite
-- Wireshark
+## ⚔️ Technical Arsenal
 
-🔹 Programming
-- C / C++
-- HTML / CSS / JavaScript / PHP / Ruby / 
-- Python (Intermediate AI Learning)
+### **🛡️ Cybersecurity Operations**
+* **Offensive:** Penetration Testing, Offensive Security Protocols (OSCP+ track), Metasploit, Burp Suite.
+* **Defensive:** Vulnerability Assessment, Network Traffic Analysis (Wireshark), KLCP (Kali Linux Certified Professional).
+* **Cryptology:** Implementation of cryptographic functions in C++.
+
+### **🤖 AI & Software Engineering**
+* **Languages:** Python (ML/NLP focus), C/C++, JavaScript, Ruby, PHP, GO, React.js etc.
+* **Frameworks:** Next.js (Turbopack), Scikit-Learn, Socket Programming.
+* **Tools:** Nmap, Git/GitHub, Linux (Kali/Parrot), SEO/AEO Audit Tools.
+
+---
+
+## 📈 Certificates & Credentials
+* **C|EH (Certified Ethical Hacker)**
+* **CCNA (Cisco Certified Network Associate)**
+* **CRTOM (Certified Read Teaming Operation & Management)**
+
+---
+
+## 🌐 Connect With Me
+[LinkedIn](www.linkedin.com/in/syed-muhammad-shayanuddin-2267a4333) | [Portfolio](https://smsu-portfolio.vercel.app) | [Discord](im_fallenstar_4589)
+
+---
+*"The best defense is an intelligent offense."*
