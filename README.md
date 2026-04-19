@@ -12,9 +12,9 @@ I am a specialized Security Professional focused on the intersection of **Offens
 ## 🚀 The Trinity Projects (Current Operations)
 *Directly developed for real-world security applications:*
 
-1.  **[Network Vulnerability Scanner](https://github.com/HACKERxSHAYAN/Network-Vuln-Scanner)**: Stealth port-scanning tool built with Python/Scapy for real-time CVE detection.
-2.  **[AI Phishing Guard](https://github.com/HACKERxSHAYAN/AI-Phishing-Detector)**: NLP-driven Machine Learning model trained to detect malicious social engineering patterns with 94%+ accuracy.
-3.  **[Secure Vault Chat](https://github.com/HACKERxSHAYAN/Secure-Vault-Chat-E2EE)**: C++ Client-Server architecture utilizing custom XOR-Rotation encryption for Zero-Knowledge communication.
+1.  **[Network Vulnerability Scanner]([https://github.com/HACKERxSHAYAN/Network-Vuln-Scanner](https://github.com/HACKERxSHAYAN/Network-vulnerability-scanner-PoC.git))**: Stealth port-scanning tool built with Python/Scapy for real-time CVE detection.
+2.  **[AI Phishing Guard]([https://github.com/HACKERxSHAYAN/AI-Phishing-Detector](https://github.com/HACKERxSHAYAN/AI-Phishing-Detector-PoC.git))**: NLP-driven Machine Learning model trained to detect malicious social engineering patterns with 94%+ accuracy.
+3.  **[Secure Vault Chat]([https://github.com/HACKERxSHAYAN/Secure-Vault-Chat-E2EE](https://github.com/HACKERxSHAYAN/Secure-Vault-Chat-E2EE.git))**: C++ Client-Server architecture utilizing custom XOR-Rotation encryption for Zero-Knowledge communication.
 
 ---
 
