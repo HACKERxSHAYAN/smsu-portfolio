@@ -95,7 +95,6 @@ export default function Contact() {
     setFormStatus('submitting');
     
     setTimeout(() => {
-      console.log('Form submitted securely');
       setFormStatus('success');
       setFormData({ name: '', email: '', message: '' });
     }, 1500);

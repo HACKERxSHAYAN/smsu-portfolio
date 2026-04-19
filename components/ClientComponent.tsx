@@ -69,7 +69,7 @@ export default function ClientComponent() {
               <span className="text-cyber-primary">{'//'}</span> SYSTEM STATUS: OPERATIONAL
             </p>
             <p className="text-gray-400 text-xs mt-2">
-              © 2024 Syed Muhammad Shayan Uddin. All systems secure.
+              © {new Date().getFullYear()} Syed Muhammad Shayan Uddin. All systems secure.
             </p>
           </motion.div>
         </footer>

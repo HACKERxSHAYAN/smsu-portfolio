@@ -11,21 +11,24 @@ const projects = [
     desc: "Python-based automated scanner utilizing Nmap scripts to identify open ports and potential CVEs in local networks. Features real-time vulnerability detection and reporting.",
     tags: ["Python", "Nmap", "Automation", "Security"],
     icon: FaCode,
-    color: "#00f3ff"
+    color: "#00f3ff",
+    github: "https://github.com/HACKERxSHAYAN/Network-vulnerability-scanner-PoC.git"
   },
   {
     title: "AI Phishing Detector",
     desc: "Machine learning model trained to detect phishing URLs and malicious email headers with 94% accuracy. Uses NLP and pattern recognition techniques.",
     tags: ["Python", "Scikit-Learn", "AI/ML", "Cyber Defense"],
     icon: FaBrain,
-    color: "#bd00ff"
+    color: "#bd00ff",
+    github: "https://github.com/HACKERxSHAYAN/AI-Phishing-Detector-PoC.git"
   },
   {
     title: "Secure Chat Application",
     desc: "End-to-end encrypted messaging app built with C++ ensuring zero-knowledge privacy architecture. Features military-grade encryption protocols.",
     tags: ["C++", "Cryptography", "Socket Programming", "Security"],
     icon: FaLock,
-    color: "#ff0055"
+    color: "#ff0055",
+    github: "https://github.com/HACKERxSHAYAN/Secure-Vault-Chat-E2EE.git"
   }
 ];
 
@@ -121,14 +124,17 @@ export default function Projects() {
                 ))}
               </div>
 
-              {/* Action Button */}
-              <motion.button 
-                className="flex items-center gap-2 text-sm text-gray-300 hover:text-white transition-colors group/btn"
-                whileHover={{ x: 5 }}
-              >
-                <span>View Code</span>
-                <FaExternalLinkAlt size={12} className="group-hover/btn:translate-x-1 transition-transform" />
-              </motion.button>
+               {/* Action Button */}
+               <motion.a
+                 href={project.github}
+                 target="_blank"
+                 rel="noopener noreferrer"
+                 className="flex items-center gap-2 text-sm text-gray-300 hover:text-white transition-colors group/btn"
+                 whileHover={{ x: 5 }}
+               >
+                 <span>View Code</span>
+                 <FaExternalLinkAlt size={12} className="group-hover/btn:translate-x-1 transition-transform" />
+               </motion.a>
             </div>
 
             {/* Corner Accents */}

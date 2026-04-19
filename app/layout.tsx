@@ -280,9 +280,45 @@ export default function RootLayout({
                   "publisher": {
                     "@id": "https://smsu-portfolio.vercel.app/#person"
                   },
-                  "inLanguage": "en-US"
-                }
-              ]
+                   "inLanguage": "en-US"
+                 },
+                 {
+                   "@type": "CreativeWork",
+                   "@id": "https://smsu-portfolio.vercel.app/#network-vulnerability-scanner",
+                   "name": "Network Vulnerability Scanner",
+                   "description": "Python-based automated scanner utilizing Nmap scripts to identify open ports and potential CVEs in local networks. Features real-time vulnerability detection and reporting.",
+                   "url": "https://github.com/HACKERxSHAYAN/Network-vulnerability-scanner-PoC.git",
+                   "creator": {
+                     "@id": "https://smsu-portfolio.vercel.app/#person"
+                   },
+                   "keywords": ["Python", "Nmap", "Automation", "Security", "Vulnerability Scanner"],
+                   "inLanguage": "en-US"
+                 },
+                 {
+                   "@type": "CreativeWork",
+                   "@id": "https://smsu-portfolio.vercel.app/#ai-phishing-detector",
+                   "name": "AI Phishing Detector",
+                   "description": "Machine learning model trained to detect phishing URLs and malicious email headers with 94% accuracy. Uses NLP and pattern recognition techniques.",
+                   "url": "https://github.com/HACKERxSHAYAN/AI-Phishing-Detector-PoC.git",
+                   "creator": {
+                     "@id": "https://smsu-portfolio.vercel.app/#person"
+                   },
+                   "keywords": ["Python", "Scikit-Learn", "AI/ML", "Cyber Defense", "Phishing Detection"],
+                   "inLanguage": "en-US"
+                 },
+                 {
+                   "@type": "CreativeWork",
+                   "@id": "https://smsu-portfolio.vercel.app/#secure-chat-application",
+                   "name": "Secure Chat Application",
+                   "description": "End-to-end encrypted messaging app built with C++ ensuring zero-knowledge privacy architecture. Features military-grade encryption protocols.",
+                   "url": "https://github.com/HACKERxSHAYAN/Secure-Vault-Chat-E2EE.git",
+                   "creator": {
+                     "@id": "https://smsu-portfolio.vercel.app/#person"
+                   },
+                   "keywords": ["C++", "Cryptography", "Socket Programming", "Security", "E2EE"],
+                   "inLanguage": "en-US"
+                 }
+               ]
             })
           }}
         />
