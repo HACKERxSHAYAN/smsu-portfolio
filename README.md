@@ -1,6 +1,6 @@
 # 🛡️ Syed Muhammad Shayan Uddin
 ### **Cybersecurity Analyst | Certified Ethical Hacker (CEH) | AI Security Researcher**
-**Karachi, Pakistan 🇵🇰 | ACCP AI Specialist @ Aptech**
+**Pakistan 🇵🇰 | AI Developer**
 
 ---
 
