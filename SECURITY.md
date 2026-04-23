@@ -97,19 +97,12 @@ This document outlines the security hardening applied to the Next.js portfolio w
 ### Pre-Deployment
 - [x] Run `npm audit` to check vulnerabilities
 - [x] Ensure no secrets in code
-- [x] Test all forms with XSS payloads
-- [x] Verify headers with security scanner
-
-### Vercel-Specific Settings
-1. Go to Project Settings → Security
-2. Enable "Enable Vulnerability Detection"
-3. Set Environment Variables:
-   - `NODE_ENV` = "production"
-4. Configure Security Headers in vercel.json (optional)
+- [x] Tested all forms with XSS payloads
+- [x] Verified headers with security scanner
 
 ### Post-Deployment
-- [ ] Test all endpoints with security tools
-- [ ] Verify CSP works correctly
+- [ ] Tested all endpoints with security tools
+- [ ] Verified CSP works correctly
 - [ ] Check for information leakage
 - [ ] Monitor rate limit errors
 
