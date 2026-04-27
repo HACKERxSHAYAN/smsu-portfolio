@@ -200,12 +200,13 @@ export default function Hero() {
                 whileTap={{ scale: 0.9 }}
                 className="relative"
               >
-                <Image 
+                 <Image 
                   src="/Cyber-Sheild-cyan-purple.png" 
                   alt="Cyber Shield Logo" 
                   width={32} 
                   height={32}
                   priority={true}
+                  style={{ height: 'auto' }}
                   className="object-contain"
                 />
               </motion.a>

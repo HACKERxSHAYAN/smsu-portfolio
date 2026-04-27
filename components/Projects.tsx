@@ -56,18 +56,18 @@ export default function Projects() {
 
       <div ref={ref} className="grid lg:grid-cols-3 gap-8 mb-20">
         {projects.map((project, i) => (
-          <motion.div
-            key={i}
-            initial={{ opacity: 0, y: 30, scale: 0.95 }}
-            animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
-            transition={{ duration: 0.5, delay: i * 0.15 }}
-            whileHover={{ 
-              y: -10,
-              boxShadow: `0 20px 40px rgba(0,0,0,0.4), 0 0 30px ${project.color}30`
-            }}
-            className="glass-panel p-7 rounded-2xl border-t-2 group cursor-pointer relative overflow-hidden"
-            style={{ borderColor: `${project.color}40` }}
-          >
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 30, scale: 0.95, borderColor: "rgba(0,0,0,0)", boxShadow: "none" }}
+              animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
+              transition={{ duration: 0.5, delay: i * 0.15 }}
+              whileHover={{ 
+                y: -10,
+                boxShadow: `0 20px 40px rgba(0,0,0,0.4), 0 0 30px ${project.color}30`
+              }}
+              className="glass-panel p-7 rounded-2xl border-t-2 group cursor-pointer relative overflow-hidden"
+              style={{ borderColor: `${project.color}40` }}
+            >
             {/* Gradient Background on Hover */}
             <div 
               className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
@@ -160,11 +160,11 @@ export default function Projects() {
         {certs.map((cert, i) => (
           <motion.div
             key={i}
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 20, borderColor: "rgba(0,0,0,0)" }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ delay: 0.6 + i * 0.1 }}
             whileHover={{ scale: 1.03 }}
-            className="glass-panel p-6 rounded-xl flex items-center gap-5 border border-transparent hover:border-current group transition-all"
+            className="glass-panel p-6 rounded-xl flex items-center gap-5 border border-transparent hover:border-current transition-all"
             style={{ borderColor: `${cert.color}30` }}
           >
             <motion.div 
