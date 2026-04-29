@@ -40,7 +40,7 @@ I am a specialized Security Professional focused on the intersection of **Offens
 ---
 
 ## 🌐 Connect With Me
-[LinkedIn](www.linkedin.com/in/syed-muhammad-shayanuddin-2267a4333) | [Portfolio](https://smsu-portfolio.vercel.app) | [Discord](im_fallenstar_4589)
+[LinkedIn](www.linkedin.com/in/syed-muhammad-shayanuddin-2267a4333) | [Portfolio](https://smsu-portfolio.vercel.app) | [Discord](im_fallenstar_4589) | [Medium](https://medium.com/@S-M-Shayan-DevSec)
 
 ---
 *"The best defense is an intelligent offense."*
