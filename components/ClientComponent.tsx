@@ -26,46 +26,46 @@ export default function ClientComponent() {
       <Header />
       
       {/* Main Content */}
-      <main className="relative z-10">
+      <main className="relative z-10" role="main">
         {/* Hero Section */}
-        <section aria-label="Hero">
+        <section aria-label="Hero" id="home">
           <Hero />
         </section>
         
         {/* About Section */}
-        <section aria-label="About">
+        <section aria-label="About" id="about">
           <About />
         </section>
         
         {/* Security Methodology Section */}
-        <section aria-label="Security Methodology">
+        <section aria-label="Security Methodology" id="methodology">
           <SecurityMethodology />
         </section>
         
         {/* Skills Section */}
-        <section aria-label="Skills">
+        <section aria-label="Skills" id="skills">
           <Skills />
         </section>
         
         {/* Projects Section */}
-        <section aria-label="Projects">
+        <section aria-label="Projects" id="projects">
           <Projects />
         </section>
         
         {/* Contact Section */}
-        <section aria-label="Contact">
+        <section aria-label="Contact" id="contact">
           <Contact />
         </section>
         
         {/* Footer */}
-        <footer className="py-8 text-center border-t border-gray-800/50">
+        <footer className="py-8 text-center border-t border-gray-800/50" role="contentinfo">
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             className="glass-panel py-6 mx-4 rounded-xl"
           >
-            <p className="text-gray-400 text-sm font-mono">
+            <p className="text-gray-400 text-sm font-mono" role="status">
               <span className="text-cyber-primary">{'//'}</span> SYSTEM STATUS: OPERATIONAL
             </p>
             <p className="text-gray-400 text-xs mt-2">

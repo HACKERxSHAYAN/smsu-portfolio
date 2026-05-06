@@ -306,19 +306,33 @@ export default function RootLayout({
                    "keywords": ["Python", "Scikit-Learn", "AI/ML", "Cyber Defense", "Phishing Detection"],
                    "inLanguage": "en-US"
                  },
-                 {
-                   "@type": "CreativeWork",
-                   "@id": "https://smsu-portfolio.vercel.app/#secure-chat-application",
-                   "name": "Secure Chat Application",
-                   "description": "End-to-end encrypted messaging app built with C++ ensuring zero-knowledge privacy architecture. Features military-grade encryption protocols.",
-                   "url": "https://github.com/HACKERxSHAYAN/Secure-Vault-Chat-E2EE.git",
-                   "creator": {
-                     "@id": "https://smsu-portfolio.vercel.app/#person"
-                   },
-                   "keywords": ["C++", "Cryptography", "Socket Programming", "Security", "E2EE"],
-                   "inLanguage": "en-US"
-                 }
-               ]
+{
+                    "@type": "CreativeWork",
+                    "@id": "https://smsu-portfolio.vercel.app/#secure-chat-application",
+                    "name": "Secure Chat Application",
+                    "description": "End-to-end encrypted messaging app built with C++ ensuring zero-knowledge privacy architecture. Features military-grade encryption protocols.",
+                    "url": "https://github.com/HACKERxSHAYAN/Secure-Vault-Chat-E2EE.git",
+                    "creator": {
+                      "@id": "https://smsu-portfolio.vercel.app/#person"
+                    },
+                    "keywords": ["C++", "Cryptography", "Socket Programming", "Security", "E2EE"],
+                    "inLanguage": "en-US"
+                  },
+                  {
+                    "@type": "Occupation",
+                    "@id": "https://smsu-portfolio.vercel.app/#occupation",
+                    "name": "Cybersecurity Analyst",
+                    "occupationalCategory": "Information Security Analyst",
+                    "description": "Designs and implements secure network solutions, conducts penetration testing, vulnerability assessments, and ethical hacking to protect digital assets.",
+                    "skills": ["Penetration Testing", "Vulnerability Assessment", "Ethical Hacking", "Network Security", "Python", "Kali Linux", "Metasploit", "Burp Suite"],
+                    "qualifications": "Certified Ethical Hacker (CEH) - EC-Council",
+                    "occupationLocation": {
+                      "@type": "City",
+                      "name": "Karachi",
+                      "addressCountry": "PK"
+                    }
+                  }
+                ]
             })
           }}
         />

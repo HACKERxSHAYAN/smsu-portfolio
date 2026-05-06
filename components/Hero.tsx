@@ -211,22 +211,23 @@ export default function Hero() {
                 />
               </motion.a>
             ) : (
-              <motion.a
-                key={index}
-                href={item.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={item.label}
-                whileHover={{ scale: 1.2, rotate: 5 }}
-                whileTap={{ scale: 0.9 }}
-                className={`text-3xl text-gray-400 ${item.color} transition-all duration-300 relative`}
-              >
-                {item.icon && <item.icon />}
-                <motion.div
-                  className="absolute -inset-2 bg-currentColor opacity-0 rounded-full blur-lg"
-                  whileHover={{ opacity: 0.3 }}
-                />
-              </motion.a>
+<motion.a 
+               key={index}
+               href={item.href}
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label={item.label}
+               whileHover={{ scale: 1.2, rotate: 5 }}
+               whileTap={{ scale: 0.9 }}
+               className={`text-3xl text-gray-400 ${item.color} transition-all duration-300 relative`}
+             >
+               {item.icon && <item.icon aria-hidden="true" />}
+               <motion.div
+                 className="absolute -inset-2 bg-currentColor opacity-0 rounded-full blur-lg"
+                 whileHover={{ opacity: 0.3 }}
+                 aria-hidden="true"
+               />
+             </motion.a>
             )
           ))}
         </motion.div>
