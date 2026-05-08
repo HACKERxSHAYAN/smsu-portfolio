@@ -33,7 +33,7 @@ const projects = [
 ];
 
 const certs = [
-  { name: "Certified Ethical Hacker (CEH)", issuer: "EC-Council", year: "2024", color: "#00f3ff" },
+  { name: "Certified Ethical Hacker (CEH)", issuer: "Cyber Shield", year: "2024", color: "#00f3ff" },
   { name: "Cisco Certified Network Associate (CCNA)", issuer: "Cisco Networking Academy", year: "2025", color: "#bd00ff" },
   { name: "Certified Red Teaming Operation Management", issuer: "Red Team Leaders", year: "2025", color: "#ff0055" }
 ];
@@ -48,26 +48,27 @@ export default function Projects() {
       <div className="absolute top-0 left-1/4 w-96 h-96 bg-cyber-primary/5 rounded-full blur-[150px] -z-10" />
       <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-cyber-secondary/5 rounded-full blur-[120px] -z-10" />
 
-      <SectionTitle 
-        title="// OPERATIONS LOG" 
-        subtitle="Projects & Certifications"
-        description="Syed Muhammad Shayan Uddin has completed multiple security projects including a Network Vulnerability Scanner, AI Phishing Detector, and Secure Chat Application. He holds CEH, CCNA, and Certified Red Teaming credentials, demonstrating advanced penetration testing and network security expertise."
-      />
+        <SectionTitle 
+          title="// OPERATIONS LOG" 
+          subtitle="Projects & Certifications"
+          description="Syed Muhammad Shayan Uddin has completed multiple security projects including a Network Vulnerability Scanner, AI Phishing Detector, and Secure Chat Application. He holds CEH, CCNA, and Certified Red Teaming credentials, demonstrating advanced penetration testing and network security expertise."
+          ariaLabel="Security Projects - Operations Log"
+        />
 
-      <div ref={ref} className="grid lg:grid-cols-3 gap-8 mb-20">
-        {projects.map((project, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 30, scale: 0.95, borderColor: "rgba(0,0,0,0)", boxShadow: "none" }}
-              animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
-              transition={{ duration: 0.5, delay: i * 0.15 }}
-              whileHover={{ 
-                y: -10,
-                boxShadow: `0 20px 40px rgba(0,0,0,0.4), 0 0 30px ${project.color}30`
-              }}
-              className="glass-panel p-7 rounded-2xl border-t-2 group cursor-pointer relative overflow-hidden"
-              style={{ borderColor: `${project.color}40` }}
-            >
+       <div ref={ref} className="grid lg:grid-cols-3 gap-8 mb-20">
+         {projects.map((project, i) => (
+           <motion.article
+             key={i}
+             initial={{ opacity: 0, y: 30, scale: 0.95, borderColor: "rgba(0,0,0,0)", boxShadow: "none" }}
+             animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
+             transition={{ duration: 0.5, delay: i * 0.15 }}
+             whileHover={{ 
+               y: -10,
+               boxShadow: `0 20px 40px rgba(0,0,0,0.4), 0 0 30px ${project.color}30`
+             }}
+             className="glass-panel p-7 rounded-2xl border-t-2 group cursor-pointer relative overflow-hidden"
+             style={{ borderColor: `${project.color}40` }}
+           >
             {/* Gradient Background on Hover */}
             <div 
               className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
@@ -90,8 +91,8 @@ export default function Projects() {
 
             {/* Content */}
             <div className="relative z-10">
-              <h3 className="text-xl font-bold text-white mb-3 group-hover:text-white transition-colors flex items-center gap-2">
-                {project.title}
+               <h3 className="text-xl font-bold text-white mb-3 group-hover:text-white transition-colors flex items-center gap-2" aria-label={`${project.title} - Security Project`}>
+                 {project.title}
                 <motion.span
                   initial={{ opacity: 0, x: -10 }}
                   whileHover={{ opacity: 1, x: 0 }}
@@ -137,12 +138,12 @@ export default function Projects() {
                </motion.a>
             </div>
 
-            {/* Corner Accents */}
-            <div className="absolute top-0 right-0 w-20 h-20 border-r-2 border-t-2 border-transparent group-hover:border-current transition-colors opacity-20" style={{ borderColor: project.color }} />
-            <div className="absolute bottom-0 left-0 w-20 h-20 border-l-2 border-b-2 border-transparent group-hover:border-current transition-colors opacity-20" style={{ borderColor: project.color }} />
-          </motion.div>
-        ))}
-      </div>
+             {/* Corner Accents */}
+             <div className="absolute top-0 right-0 w-20 h-20 border-r-2 border-t-2 border-transparent group-hover:border-current transition-colors opacity-20" style={{ borderColor: project.color }} />
+             <div className="absolute bottom-0 left-0 w-20 h-20 border-l-2 border-b-2 border-transparent group-hover:border-current transition-colors opacity-20" style={{ borderColor: project.color }} />
+           </motion.article>
+         ))}
+       </div>
 
       {/* Certifications Section */}
       <motion.h3 
@@ -177,16 +178,16 @@ export default function Projects() {
             >
               <FaAward size={24} style={{ color: cert.color }} />
             </motion.div>
-            <div className="min-w-0">
-              <h4 className="font-bold text-white text-sm md:text-base truncate">{cert.name}</h4>
-              <p className="text-gray-400 text-xs md:text-sm">{cert.issuer}</p>
-              <span 
-                className="text-xs font-mono mt-1 inline-block"
-                style={{ color: cert.color }}
-              >
-                ◆ {cert.year}
-              </span>
-            </div>
+             <div className="min-w-0 flex-1">
+               <h4 className="font-bold text-white text-sm md:text-base whitespace-normal leading-tight">{cert.name}</h4>
+               <p className="text-gray-400 text-xs md:text-sm mt-1">{cert.issuer}</p>
+               <span 
+                 className="text-xs font-mono mt-2 inline-block"
+                 style={{ color: cert.color }}
+               >
+                 ◆ {cert.year}
+               </span>
+             </div>
           </motion.div>
         ))}
       </div>

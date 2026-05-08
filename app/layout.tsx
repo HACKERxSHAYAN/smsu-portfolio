@@ -3,15 +3,19 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: {
-    default: "SYED MUHAMMAD SHAYAN UDDIN // CYBERSECURITY ANALYST",
-    template: "%s | SYED MUHAMMAD SHAYAN UDDIN // CYBERSECURITY ANALYST",
+    default: "SHAYAN.DEVSEC | Syed Muhammad Shayan Uddin | Cyber Security & AI",
+    template: "%s | SHAYAN.DEVSEC | Syed Muhammad Shayan Uddin | Cyber Security & AI",
   },
-  description:
-    "CEH Certified Cybersecurity Analyst | Absolute Security. Specialized in penetration testing, network security, and ethical hacking. Protecting digital assets with industry-leading security practices.",
+  description: "Official portfolio of Syed Muhammad Shayan Uddin (SHAYAN.DEVSEC). Certified Ethical Hacker, AI Developer, and DevSecOps specialist. Explore advanced security projects and technical write-ups.",
   keywords: [
-    "Cybersecurity Analyst",
-    "CEH Certified",
+    "Syed Muhammad Shayan Uddin",
     "Certified Ethical Hacker",
+    "Cyber Security Analyst",
+    "DevSecOps Expert",
+    "Web Developer Karachi",
+    "Penetration Tester Portfolio",
+    "CEH",
+    "Cybersecurity Analyst",
     "Penetration Testing",
     "Network Security",
     "Ethical Hacker",
@@ -25,8 +29,8 @@ export const metadata: Metadata = {
     "WhatsApp bot developer",
   ],
   authors: [{ name: "Syed Muhammad Shayan Uddin" }],
-  creator: "Syed Muhammad Shayan Uddin",
-  publisher: "Syed Muhammad Shayan Uddin",
+  creator: "SHAYAN.DEVSEC",
+  publisher: "SHAYAN.DEVSEC",
   formatDetection: {
     email: false,
     address: false,
@@ -55,10 +59,9 @@ export const metadata: Metadata = {
     type: "profile",
     locale: "en_US",
     url: "https://smsu-portfolio.vercel.app/",
-    title: "SYED MUHAMMAD SHAYAN UDDIN // CYBERSECURITY ANALYST",
-    description:
-      "CEH Certified Cybersecurity Analyst | Absolute Security. Specialized in penetration testing, network security, and ethical hacking.",
-    siteName: "Syed Muhammad Shayan Uddin // Cybersecurity Analyst",
+    title: "SHAYAN.DEVSEC | Syed Muhammad Shayan Uddin | Cyber Security & AI",
+    description: "Official portfolio of Syed Muhammad Shayan Uddin (SHAYAN.DEVSEC). Certified Ethical Hacker, AI Developer, and DevSecOps specialist. Explore advanced security projects and technical write-ups.",
+    siteName: "SHAYAN.DEVSEC | Syed Muhammad Shayan Uddin",
     firstName: "Syed Muhammad Shayan",
     lastName: "Uddin",
     username: "smsu_cyber",
@@ -67,15 +70,14 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Syed Muhammad Shayan Uddin - Cybersecurity & Automation Expert",
+        alt: "SHAYAN.DEVSEC - Elite Cyber Security Analyst & DevSecOps Architect Portfolio",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "SYED MUHAMMAD SHAYAN UDDIN // CYBERSECURITY ANALYST",
-    description:
-      "CEH Certified Cybersecurity Analyst | Absolute Security. Specialized in penetration testing and network security.",
+    title: "SHAYAN.DEVSEC | Syed Muhammad Shayan Uddin | Cyber Security & AI",
+    description: "Official portfolio of Syed Muhammad Shayan Uddin (SHAYAN.DEVSEC). Certified Ethical Hacker, AI Developer, and DevSecOps specialist. Explore advanced security projects and technical write-ups.",
     images: ["/og-image.png"],
     creator: "@shayandev",
   },
@@ -127,11 +129,11 @@ export default function RootLayout({
                   "@type": "Person",
                   "@id": "https://smsu-portfolio.vercel.app/#person",
                   "name": "Syed Muhammad Shayan Uddin",
-                  "givenName": "Syed Muhammad Shayan",
-                  "familyName": "Uddin",
+                  "alternateName": "SHAYAN.DEVSEC",
                   "url": "https://smsu-portfolio.vercel.app/",
                   "image": "https://smsu-portfolio.vercel.app/og-image.png",
-                  "jobTitle": "Cybersecurity Analyst",
+                  "jobTitle": "Cyber Security Analyst & AI Developer",
+                  "description": "SHAYAN.DEVSEC: Certified Ethical Hacker (CEH) and DevSecOps Expert specializing in AI-driven cybersecurity, penetration testing, vulnerability assessment, and secure web development. Based in Karachi, Pakistan.",
                   "knowsAbout": [
                     {
                       "@type": "Thing",
@@ -155,7 +157,10 @@ export default function RootLayout({
                     "Python Programming",
                     "Kali Linux",
                     "Metasploit",
-                    "Burp Suite"
+                    "Burp Suite",
+                    "DevSecOps",
+                    "AI Cybersecurity",
+                    "Secure Web Development"
                   ],
                   "hasCredential": [
                     {
@@ -167,11 +172,21 @@ export default function RootLayout({
                         "@type": "Organization",
                         "name": "EC-Council"
                       }
+                    },
+                    {
+                      "@type": "EducationalOccupationalCredential",
+                      "credentialCategory": "certification",
+                      "name": "Cisco Certified Network Associate (CCNA)",
+                      "recognizedBy": {
+                        "@type": "Organization",
+                        "name": "Cisco"
+                      }
                     }
                   ],
                   "sameAs": [
-                    "https://github.com",
-                    "https://linkedin.com"
+                    "https://github.com/HACKERxSHAYAN",
+                    "https://linkedin.com/in/syed-muhammad-shayan-uddin",
+                    "https://medium.com/@shayandevsec"
                   ],
                   "contactPoint": {
                     "@type": "ContactPoint",
@@ -255,8 +270,8 @@ export default function RootLayout({
                   "@type": "WebSite",
                   "@id": "https://smsu-portfolio.vercel.app/#website",
                   "url": "https://smsu-portfolio.vercel.app/",
-                  "name": "Syed Muhammad Shayan Uddin - Cybersecurity Portfolio",
-                  "description": "CEH Certified Cybersecurity Analyst portfolio showcasing penetration testing, network security, and ethical hacking services.",
+                  "name": "SHAYAN.DEVSEC | Syed Muhammad Shayan Uddin | Cyber Security & AI Portfolio",
+                  "description": "Official portfolio of Syed Muhammad Shayan Uddin (SHAYAN.DEVSEC). Certified Ethical Hacker, AI Developer, and DevSecOps specialist showcasing advanced security projects and technical write-ups.",
                   "publisher": {
                     "@id": "https://smsu-portfolio.vercel.app/#person"
                   },
@@ -270,8 +285,8 @@ export default function RootLayout({
                   "@type": "WebPage",
                   "@id": "https://smsu-portfolio.vercel.app/#webpage",
                   "url": "https://smsu-portfolio.vercel.app/",
-                  "name": "Syed Muhammad Shayan Uddin // Cybersecurity Analyst",
-                  "description": "CEH Certified Cybersecurity Analyst | Absolute Security. Specialized in penetration testing, network security, and ethical hacking.",
+                  "name": "SHAYAN.DEVSEC | Syed Muhammad Shayan Uddin | Cyber Security & AI",
+                  "description": "Official portfolio of Syed Muhammad Shayan Uddin (SHAYAN.DEVSEC). Certified Ethical Hacker, AI Developer, and DevSecOps specialist. Explore advanced security projects and technical write-ups.",
                   "datePublished": "2024-01-01",
                   "dateModified": "2024-04-13T01:08:40+05:00",
                   "author": {
@@ -315,24 +330,68 @@ export default function RootLayout({
                     "creator": {
                       "@id": "https://smsu-portfolio.vercel.app/#person"
                     },
-                    "keywords": ["C++", "Cryptography", "Socket Programming", "Security", "E2EE"],
-                    "inLanguage": "en-US"
+                  "keywords": ["C++", "Cryptography", "Socket Programming", "Security", "E2EE"],
+                  "inLanguage": "en-US"
+                },
+                {
+                  "@type": "ProfessionalService",
+                  "@id": "https://smsu-portfolio.vercel.app/#professional-service",
+                  "name": "SHAYAN.DEVSEC - Cybersecurity & DevSecOps Services",
+                  "description": "Comprehensive cybersecurity services including penetration testing, vulnerability assessment, security auditing, malware removal, network security, and AI-driven security solutions. CEH certified analyst with 3+ years experience.",
+                  "url": "https://smsu-portfolio.vercel.app/",
+                  "provider": {
+                    "@id": "https://smsu-portfolio.vercel.app/#person"
                   },
-                  {
-                    "@type": "Occupation",
-                    "@id": "https://smsu-portfolio.vercel.app/#occupation",
-                    "name": "Cybersecurity Analyst",
-                    "occupationalCategory": "Information Security Analyst",
-                    "description": "Designs and implements secure network solutions, conducts penetration testing, vulnerability assessments, and ethical hacking to protect digital assets.",
-                    "skills": ["Penetration Testing", "Vulnerability Assessment", "Ethical Hacking", "Network Security", "Python", "Kali Linux", "Metasploit", "Burp Suite"],
-                    "qualifications": "Certified Ethical Hacker (CEH) - EC-Council",
-                    "occupationLocation": {
-                      "@type": "City",
-                      "name": "Karachi",
-                      "addressCountry": "PK"
-                    }
+                  "areaServed": {
+                    "@type": "Country",
+                    "name": "PK"
+                  },
+                  "serviceType": [
+                    "Penetration Testing",
+                    "Vulnerability Assessment",
+                    "Security Auditing",
+                    "Malware Removal",
+                    "Network Security",
+                    "DevSecOps Consulting",
+                    "AI Cybersecurity"
+                  ],
+                  "availableLanguage": "en",
+                  "hasOfferCatalog": {
+                    "@type": "OfferCatalog",
+                    "name": "Cybersecurity Services",
+                    "itemListElement": [
+                      {
+                        "@type": "Offer",
+                        "itemOffered": {
+                          "@type": "Service",
+                          "name": "Penetration Testing Services"
+                        }
+                      },
+                      {
+                        "@type": "Offer",
+                        "itemOffered": {
+                          "@type": "Service",
+                          "name": "Vulnerability Assessment"
+                        }
+                      },
+                      {
+                        "@type": "Offer",
+                        "itemOffered": {
+                          "@type": "Service",
+                          "name": "Security Auditing"
+                        }
+                      },
+                      {
+                        "@type": "Offer",
+                        "itemOffered": {
+                          "@type": "Service",
+                          "name": "Malware Removal & Cleanup"
+                        }
+                      }
+                    ]
                   }
-                ]
+                }
+              ]
             })
           }}
         />

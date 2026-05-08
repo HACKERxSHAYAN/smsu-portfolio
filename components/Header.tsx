@@ -37,7 +37,7 @@ export default function Header() {
           {/* Logo */}
           <motion.a
             href="#"
-            aria-label="Shayan.sec Home"
+            aria-label="Shayan.devsec Home"
             className="flex items-center gap-3 group"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -51,7 +51,7 @@ export default function Header() {
               />
             </div>
             <span className="text-xl font-bold bg-gradient-to-r from-cyber-primary to-cyber-secondary bg-clip-text text-transparent">
-              SHAYAN.SEC
+               SHAYAN.DEVSEC
             </span>
           </motion.a>
 

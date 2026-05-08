@@ -3,7 +3,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
-export default function SectionTitle({ title, subtitle, description }: { title: string; subtitle?: string; description?: string }) {
+export default function SectionTitle({ title, subtitle, description, ariaLabel }: { title: string; subtitle?: string; description?: string; ariaLabel?: string }) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-50px" });
 
@@ -24,6 +24,7 @@ export default function SectionTitle({ title, subtitle, description }: { title: 
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.6 }}
         className="text-4xl md:text-5xl lg:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyber-primary via-white to-cyber-secondary inline-block relative"
+        aria-label={ariaLabel || title}
       >
         {title}
         

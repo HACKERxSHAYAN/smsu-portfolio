@@ -3,7 +3,7 @@
 import { TypeAnimation } from 'react-type-animation';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { IconType } from 'react-icons';
-import { FaGithub, FaLinkedin, FaChevronDown } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaMedium, FaChevronDown } from 'react-icons/fa';
 import { useRef, useState, useEffect } from 'react';
 import Image from 'next/image';
 import PrimaryButton from './PrimaryButton';
@@ -27,8 +27,9 @@ export default function Hero() {
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
   const socialLinks: { icon?: IconType; isImage?: boolean; color?: string; href: string; label: string }[] = [
-    { icon: FaGithub, color: 'hover:text-white', href: 'https://github.com', label: 'GitHub Profile' },
-    { icon: FaLinkedin, color: 'hover:text-[#0077b5]', href: 'https://linkedin.com', label: 'LinkedIn Profile' },
+    { icon: FaGithub, color: 'hover:text-white', href: 'https://github.com/HACKERxSHAYAN', label: 'GitHub Profile' },
+    { icon: FaLinkedin, color: 'hover:text-[#0077b5]', href: 'https://linkedin.com/in/syed-muhammad-shayan-uddin', label: 'LinkedIn Profile' },
+    { icon: FaMedium, color: 'text-white hover:text-cyan-400', href: 'https://medium.com/@shayandevsec', label: 'Medium Profile' },
     { isImage: true, href: '#', label: 'Security Expertise' }
   ];
 
@@ -91,20 +92,25 @@ export default function Hero() {
         style={{ opacity }}
         className="text-center z-10 max-w-4xl will-change-opacity"
       >
-        {/* Main Title with Gradient Text */}
-        <motion.h1 
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          layout="position"
-          className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold mb-6 tracking-tight"
-        >
-          <span className="text-white">Syed Muhammad</span>
-          <br />
-          <span className="bg-gradient-to-r from-cyan-400 via-white to-purple-500 bg-clip-text text-transparent bg-[length:200%_auto] animate-[gradient-shift_3s_ease_infinite]">
-            Shayan Uddin
-          </span>
-        </motion.h1>
+         {/* Main Title with Gradient Text */}
+         <motion.h1 
+           initial={{ opacity: 0, y: 30 }}
+           animate={{ opacity: 1, y: 0 }}
+           transition={{ duration: 0.8, delay: 0.2 }}
+           layout="position"
+           className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold mb-6 tracking-tight"
+         >
+           <span className="text-white">Syed Muhammad</span>
+           <br />
+           <span className="bg-gradient-to-r from-cyan-400 via-white to-purple-500 bg-clip-text text-transparent bg-[length:200%_auto] animate-[gradient-shift_3s_ease_infinite]">
+             Shayan Uddin
+           </span>
+         </motion.h1>
+
+         {/* SEO Keywords - Visually Hidden but Crawler Accessible */}
+         <div className="sr-only">
+           SHAYAN.DEVSEC | Elite Cyber Security Analyst & DevSecOps Architect | Certified Ethical Hacker | Penetration Tester Portfolio | Web Developer Karachi
+         </div>
 
         {/* Gradient Tagline */}
         <motion.div
@@ -125,30 +131,30 @@ export default function Hero() {
           </h2>
         </motion.div>
 
-        {/* Typing Animation */}
-        <motion.div 
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.8 }}
-          className="text-lg sm:text-xl md:text-2xl text-gray-300 mb-10 font-mono h-10"
-        >
-          <TypeAnimation
-            sequence={[
-              'Ethical Hacker',
-              1500,
-              'Developer',
-              1500,
-              'Tech Enthusiast',
-              1500,
-              'Cybersecurity Expert',
-              1500
-            ]}
-            wrapper="span"
-            speed={50}
-            repeat={Infinity}
-            className="text-cyan-400"
-          />
-        </motion.div>
+         {/* Typing Animation */}
+         <motion.div 
+           initial={{ opacity: 0 }}
+           animate={{ opacity: 1 }}
+           transition={{ duration: 0.5, delay: 0.8 }}
+           className="text-lg sm:text-xl md:text-2xl text-gray-300 mb-10 font-mono min-h-[2.5rem] whitespace-nowrap"
+         >
+           <TypeAnimation
+             sequence={[
+               'AI Developer',
+               1500,
+               'AI Full-Stack Developer',
+               1500,
+               'Cyber Security Analyst',
+               1500,
+               'Ethical Hacker',
+               1500
+             ]}
+             wrapper="span"
+             speed={50}
+             repeat={Infinity}
+             className="text-cyan-400"
+           />
+         </motion.div>
 
         {/* CTA Buttons */}
         <motion.div 
@@ -200,13 +206,12 @@ export default function Hero() {
                 whileTap={{ scale: 0.9 }}
                 className="relative"
               >
-                 <Image 
+                <Image 
                   src="/Cyber-Sheild-cyan-purple.png" 
-                  alt="Cyber Shield Logo" 
+                  alt="SHAYAN.DEVSEC - Cyber Security Analyst Portfolio - Cyber Shield Logo" 
                   width={32} 
                   height={32}
                   priority={true}
-                  style={{ height: 'auto' }}
                   className="object-contain"
                 />
               </motion.a>
