@@ -55,7 +55,7 @@ export default function SecurityMethodology() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="methodology" className="py-24 px-4 relative overflow-hidden">
+    <section id="methodology" aria-labelledby="methodology-heading" className="py-24 px-4 relative overflow-hidden">
       {/* Background Effects */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-cyber-primary/5 rounded-full blur-[200px] -z-10" />
       <div className="absolute top-0 right-0 w-96 h-96 bg-cyber-secondary/5 rounded-full blur-[150px] -z-10" />
@@ -141,15 +141,16 @@ export default function SecurityMethodology() {
                 </motion.div>
 
                 {/* Title */}
-                <h3 
+                <h3
                   className="text-xl font-bold mb-4 transition-colors duration-300"
                   style={{ color: method.color }}
+                  itemProp="name"
                 >
                   {method.title}
                 </h3>
 
                 {/* Description */}
-                <p className="text-gray-400 leading-relaxed">
+                <p className="text-gray-400 leading-relaxed" itemProp="description">
                   {method.description}
                 </p>
 

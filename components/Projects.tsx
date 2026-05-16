@@ -43,7 +43,7 @@ export default function Projects() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="projects" className="py-24 px-4 max-w-7xl mx-auto relative overflow-hidden">
+    <section id="projects" aria-labelledby="projects-heading" className="py-24 px-4 max-w-7xl mx-auto relative overflow-hidden">
       {/* Background Effects */}
       <div className="absolute top-0 left-1/4 w-96 h-96 bg-cyber-primary/5 rounded-full blur-[150px] -z-10" />
       <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-cyber-secondary/5 rounded-full blur-[120px] -z-10" />
@@ -55,97 +55,100 @@ export default function Projects() {
           ariaLabel="Security Projects - Operations Log"
         />
 
-       <div ref={ref} className="grid lg:grid-cols-3 gap-8 mb-20">
-         {projects.map((project, i) => (
-           <motion.article
-             key={i}
-             initial={{ opacity: 0, y: 30, scale: 0.95, borderColor: "rgba(0,0,0,0)", boxShadow: "none" }}
-             animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
-             transition={{ duration: 0.5, delay: i * 0.15 }}
-             whileHover={{ 
-               y: -10,
-               boxShadow: `0 20px 40px rgba(0,0,0,0.4), 0 0 30px ${project.color}30`
-             }}
-             className="glass-panel p-7 rounded-2xl border-t-2 group cursor-pointer relative overflow-hidden"
-             style={{ borderColor: `${project.color}40` }}
-           >
-            {/* Gradient Background on Hover */}
-            <div 
-              className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-              style={{
-                background: `linear-gradient(135deg, ${project.color}10 0%, transparent 100%)`
+        <div ref={ref} className="grid lg:grid-cols-3 gap-8 mb-20" itemScope itemType="https://schema.org/ItemList">
+          {projects.map((project, i) => (
+            <motion.article
+              key={i}
+              itemScope
+              itemType="https://schema.org/SoftwareSourceCode"
+              initial={{ opacity: 0, y: 30, scale: 0.95, borderColor: "rgba(0,0,0,0)", boxShadow: "none" }}
+              animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
+              transition={{ duration: 0.5, delay: i * 0.15 }}
+              whileHover={{
+                y: -10,
+                boxShadow: `0 20px 40px rgba(0,0,0,0.4), 0 0 30px ${project.color}30`
               }}
-            />
-
-            {/* Icon */}
-            <motion.div 
-              className="w-16 h-16 rounded-xl flex items-center justify-center mb-6 relative z-10"
-              style={{ 
-                backgroundColor: `${project.color}20`,
-                border: `1px solid ${project.color}40`
-              }}
-              whileHover={{ scale: 1.1, rotate: 5 }}
+              className="glass-panel p-7 rounded-2xl border-t-2 group cursor-pointer relative overflow-hidden"
+              style={{ borderColor: `${project.color}40` }}
+              aria-label={`${project.title} — Security Project by SHAYAN.DEVSEC`}
             >
-              <project.icon className="text-3xl" style={{ color: project.color }} />
-            </motion.div>
+              {/* Gradient Background on Hover */}
+              <div
+                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                style={{
+                  background: `linear-gradient(135deg, ${project.color}10 0%, transparent 100%)`
+                }}
+              />
 
-            {/* Content */}
-            <div className="relative z-10">
-               <h3 className="text-xl font-bold text-white mb-3 group-hover:text-white transition-colors flex items-center gap-2" aria-label={`${project.title} - Security Project`}>
-                 {project.title}
-                <motion.span
-                  initial={{ opacity: 0, x: -10 }}
-                  whileHover={{ opacity: 1, x: 0 }}
-                  className="text-xs text-gray-400"
-                >
-                  →
-                </motion.span>
-              </h3>
-              <p className="text-gray-400 text-sm mb-5 leading-relaxed">
-                {project.desc}
-              </p>
-              
-              {/* Tags */}
-              <div className="flex flex-wrap gap-2 mb-5">
-                {project.tags.map((tag, index) => (
-                  <motion.span 
-                    key={tag}
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={isInView ? { opacity: 1, scale: 1 } : {}}
-                    transition={{ delay: 0.5 + index * 0.1 }}
-                    className="text-xs px-3 py-1.5 rounded-lg font-mono"
-                    style={{ 
-                      backgroundColor: `${project.color}15`,
-                      color: project.color,
-                      border: `1px solid ${project.color}30`
-                    }}
+              {/* Icon */}
+              <motion.div
+                className="w-16 h-16 rounded-xl flex items-center justify-center mb-6 relative z-10"
+                style={{
+                  backgroundColor: `${project.color}20`,
+                  border: `1px solid ${project.color}40`
+                }}
+                whileHover={{ scale: 1.1, rotate: 5 }}
+              >
+                <project.icon className="text-3xl" style={{ color: project.color }} />
+              </motion.div>
+
+              {/* Content */}
+              <div className="relative z-10" itemProp="name">
+                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-white transition-colors flex items-center gap-2" aria-label={`${project.title} - Security Project by SHAYAN.DEVSEC`}>
+                  <span itemProp="name">{project.title}</span>
+                  <motion.span
+                    initial={{ opacity: 0, x: -10 }}
+                    whileHover={{ opacity: 1, x: 0 }}
+                    className="text-xs text-gray-400"
                   >
-                    {tag}
+                    →
                   </motion.span>
-                ))}
+                </h3>
+                <p className="text-gray-400 text-sm mb-5 leading-relaxed" itemProp="description">
+                  {project.desc}
+                </p>
+
+                {/* Tags */}
+                <div className="flex flex-wrap gap-2 mb-5">
+                  {project.tags.map((tag, index) => (
+                    <motion.span
+                      key={tag}
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      animate={isInView ? { opacity: 1, scale: 1 } : {}}
+                      transition={{ delay: 0.5 + index * 0.1 }}
+                      className="text-xs px-3 py-1.5 rounded-lg font-mono"
+                      style={{
+                        backgroundColor: `${project.color}15`,
+                        color: project.color,
+                        border: `1px solid ${project.color}30`
+                      }}
+                    >
+                      {tag}
+                    </motion.span>
+                  ))}
+                </div>
+
+                {/* Action Button */}
+                <motion.a
+                  href={project.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-sm text-gray-300 hover:text-white transition-colors group/btn"
+                  whileHover={{ x: 5 }}
+                  aria-label={`View source code for ${project.title} on GitHub — SHAYAN.DEVSEC`}
+                  itemProp="codeRepository"
+                >
+                  <span>View Code</span>
+                  <FaExternalLinkAlt size={12} className="group-hover/btn:translate-x-1 transition-transform" />
+                </motion.a>
               </div>
 
-               {/* Action Button */}
-               <motion.a
-                 href={project.github}
-                 target="_blank"
-                 rel="noopener noreferrer"
-                 className="flex items-center gap-2 text-sm text-gray-300 hover:text-white transition-colors group/btn"
-                 whileHover={{ x: 5 }}
-               >
-                 <span>View Code</span>
-                 <FaExternalLinkAlt size={12} className="group-hover/btn:translate-x-1 transition-transform" />
-               </motion.a>
-            </div>
-
-             {/* Corner Accents */}
-             <div className="absolute top-0 right-0 w-20 h-20 border-r-2 border-t-2 border-transparent group-hover:border-current transition-colors opacity-20" style={{ borderColor: project.color }} />
-             <div className="absolute bottom-0 left-0 w-20 h-20 border-l-2 border-b-2 border-transparent group-hover:border-current transition-colors opacity-20" style={{ borderColor: project.color }} />
-           </motion.article>
-         ))}
-       </div>
-
-      {/* Certifications Section */}
+              {/* Corner Accents */}
+              <div className="absolute top-0 right-0 w-20 h-20 border-r-2 border-t-2 border-transparent group-hover:border-current transition-colors opacity-20" style={{ borderColor: project.color }} aria-hidden="true" />
+              <div className="absolute bottom-0 left-0 w-20 h-20 border-l-2 border-b-2 border-transparent group-hover:border-current transition-colors opacity-20" style={{ borderColor: project.color }} aria-hidden="true" />
+            </motion.article>
+          ))}
+        </div>
       <motion.h3 
         initial={{ opacity: 0 }}
         animate={isInView ? { opacity: 1 } : {}}

@@ -113,13 +113,31 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-24 px-4 bg-gradient-to-t from-black via-cyber-dark/50 to-transparent relative overflow-hidden">
+    <section id="contact" aria-labelledby="contact-heading" className="py-24 px-4 bg-gradient-to-t from-black via-cyber-dark/50 to-transparent relative overflow-hidden">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-cyber-primary to-transparent opacity-50" />
       <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-cyber-secondary to-transparent opacity-50" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-cyber-primary/5 rounded-full blur-[100px] -z-10" />
 
-      <div ref={ref} className="max-w-4xl mx-auto">
-        <SectionTitle 
+        <div ref={ref} className="max-w-4xl mx-auto">
+          {/* JSON-LD ContactPage supplement */}
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "ContactPage",
+                "@id": "https://smsu-portfolio.vercel.app/#contactpage",
+                "url": "https://smsu-portfolio.vercel.app/#contact",
+                "name": "Contact SHAYAN.DEVSEC — Syed Muhammad Shayan Uddin",
+                "description": "Contact form and professional contact details for Syed Muhammad Shayan Uddin (SHAYAN.DEVSEC) — AI Developer, Full-Stack Developer, Cyber Security Analyst, and Penetration Tester.",
+                "mainEntity": {
+                  "@id": "https://smsu-portfolio.vercel.app/#person"
+                }
+              })
+            }}
+          />
+
+          <SectionTitle
         title="// ESTABLISH UPLINK" 
         subtitle="Send a Secure Message"
         description="Contact Syed Muhammad Shayan Uddin for professional cybersecurity services including penetration testing, vulnerability assessment, network security audits, and malware removal. Based in Karachi, Pakistan, available for both local and international security consultations."
@@ -193,10 +211,17 @@ export default function Contact() {
           <span className="flex items-center gap-2"><span className="w-2 h-2 bg-cyber-primary rounded-full animate-pulse" />SECURE CONNECTION</span><span className="text-gray-700">//</span><span>END-TO-END ENCRYPTED</span>
         </motion.p>
 
+        <address
+          className="sr-only"
+          aria-label="Contact details for SHAYAN.DEVSEC — Syed Muhammad Shayan Uddin: Email shayanuddin4589@gmail.com, Location Karachi Pakistan, Status Available for hire"
+        >
+          SHAYAN.DEVSEC contact: Email — shayanuddin4589@gmail.com | Location — Karachi, Pakistan | Status — Available for hire
+        </address>
+
         <motion.div initial={{ opacity: 0, y: 30 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ delay: 0.9 }} className="grid md:grid-cols-3 gap-6 mt-12">
           {[{ label: "Email", value: "shayanuddin4589@gmail.com", icon: FaEnvelope }, { label: "Location", value: "Karachi, Pakistan", icon: FaUser }, { label: "Status", value: "Available", icon: FaCheck }].map((item, index) => (
             <div key={index} className="glass-panel p-4 rounded-xl text-center border border-gray-800 hover:border-cyber-primary/30 transition-colors">
-              <item.icon className="text-cyber-primary mx-auto mb-2" />
+              <item.icon className="text-cyber-primary mx-auto mb-2" aria-hidden="true" />
               <p className="text-xs text-gray-400 font-mono">{item.label}</p>
               <p className="text-white font-medium text-sm">{item.value}</p>
             </div>

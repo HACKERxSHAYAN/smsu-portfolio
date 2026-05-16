@@ -3,18 +3,22 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: {
-    default: "SHAYAN.DEVSEC | Syed Muhammad Shayan Uddin | Cyber Security & AI",
+    default: "SHAYAN.DEVSEC | Syed Muhammad Shayan Uddin | Cyber Security & AI Developer",
     template: "%s | SHAYAN.DEVSEC | Syed Muhammad Shayan Uddin | Cyber Security & AI",
   },
-  description: "Official portfolio of Syed Muhammad Shayan Uddin (SHAYAN.DEVSEC). Certified Ethical Hacker, AI Developer, and DevSecOps specialist. Explore advanced security projects and technical write-ups.",
+  description: "SHAYAN.DEVSEC — the official portfolio of Syed Muhammad Shayan Uddin, AI Developer, Full-Stack Developer, Cyber Security Analyst, and Penetration Tester (CEH certified). Featuring advanced cybersecurity projects, penetration testing methodologies, AI-driven security solutions, and DevSecOps automation workflows. Based in Karachi, Pakistan.",
   keywords: [
     "Syed Muhammad Shayan Uddin",
-    "Certified Ethical Hacker",
+    "SHAYAN.DEVSEC",
+    "AI Developer",
+    "Full-Stack Developer",
     "Cyber Security Analyst",
+    "Penetration Tester",
+    "Certified Ethical Hacker",
+    "CEH",
     "DevSecOps Expert",
     "Web Developer Karachi",
     "Penetration Tester Portfolio",
-    "CEH",
     "Cybersecurity Analyst",
     "Penetration Testing",
     "Network Security",
@@ -24,13 +28,21 @@ export const metadata: Metadata = {
     "Information Security",
     "Cyber Defense",
     "Security Analyst",
+    "Vulnerability Assessment",
+    "AI Cybersecurity",
+    "AI Phishing Detection",
     "n8n automation specialist",
     "malware cleanup services",
     "WhatsApp bot developer",
   ],
-  authors: [{ name: "Syed Muhammad Shayan Uddin" }],
+  authors: [
+    { name: "Syed Muhammad Shayan Uddin", url: "https://smsu-portfolio.vercel.app/" }
+  ],
   creator: "SHAYAN.DEVSEC",
   publisher: "SHAYAN.DEVSEC",
+  applicationName: "SHAYAN.DEVSEC Portfolio",
+  generator: "Next.js",
+  referrer: "strict-origin-when-cross-origin",
   formatDetection: {
     email: false,
     address: false,
@@ -59,27 +71,29 @@ export const metadata: Metadata = {
     type: "profile",
     locale: "en_US",
     url: "https://smsu-portfolio.vercel.app/",
-    title: "SHAYAN.DEVSEC | Syed Muhammad Shayan Uddin | Cyber Security & AI",
-    description: "Official portfolio of Syed Muhammad Shayan Uddin (SHAYAN.DEVSEC). Certified Ethical Hacker, AI Developer, and DevSecOps specialist. Explore advanced security projects and technical write-ups.",
+    title: "SHAYAN.DEVSEC | Syed Muhammad Shayan Uddin | Cyber Security & AI Developer",
+    description: "Official portfolio of Syed Muhammad Shayan Uddin (SHAYAN.DEVSEC) — AI Developer, Full-Stack Developer, Cyber Security Analyst, and Penetration Tester (CEH). Explore advanced penetration testing, AI-driven security tools, DevSecOps automation, and zero-trust architecture projects.",
     siteName: "SHAYAN.DEVSEC | Syed Muhammad Shayan Uddin",
     firstName: "Syed Muhammad Shayan",
     lastName: "Uddin",
     username: "smsu_cyber",
+    gender: "male",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "SHAYAN.DEVSEC - Elite Cyber Security Analyst & DevSecOps Architect Portfolio",
+        alt: "SHAYAN.DEVSEC - AI Developer & Cyber Security Analyst Portfolio",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "SHAYAN.DEVSEC | Syed Muhammad Shayan Uddin | Cyber Security & AI",
-    description: "Official portfolio of Syed Muhammad Shayan Uddin (SHAYAN.DEVSEC). Certified Ethical Hacker, AI Developer, and DevSecOps specialist. Explore advanced security projects and technical write-ups.",
+    title: "SHAYAN.DEVSEC | Syed Muhammad Shayan Uddin | Cyber Security & AI Developer",
+    description: "AI Developer, Full-Stack Developer, Cyber Security Analyst & Penetration Tester (CEH). Explore cybersecurity projects, DevSecOps workflows, and AI-driven threat detection by SHAYAN.DEVSEC.",
     images: ["/og-image.png"],
     creator: "@shayandev",
+    site: "@shayandev",
   },
   robots: {
     index: true,
@@ -93,14 +107,18 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
+  appleWebApp: {
+    capable: true,
+    title: "SHAYAN.DEVSEC | Cyber Security & AI Developer",
+    statusBarStyle: "black-translucent",
+  },
   verification: {
     google: "your-google-verification-code",
     yandex: "your-yandex-verification-code",
     yahoo: "your-yahoo-verification-code",
   },
   category: "technology",
-  classification: "Cybersecurity, Automation, SEO",
-  referrer: "strict-origin-when-cross-origin",
+  classification: "Cybersecurity, AI Development, Full-Stack Development, Penetration Testing",
 };
 
 export default function RootLayout({
@@ -109,16 +127,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en">
       <head>
         <link rel="icon" href="/Cyber-Sheild-cyan-purple.png" type="image/png" sizes="32x32" />
         <link rel="shortcut icon" href="/Cyber-Sheild-cyan-purple.png" />
+        <link rel="apple-touch-icon" href="/Cyber-Sheild-cyan-purple.png" />
+        <link rel="canonical" href="https://smsu-portfolio.vercel.app/" />
+        <meta name="googlebot" content="index, follow" />
+        <meta name="bingbot" content="index, follow" />
         <meta name="referrer" content="strict-origin-when-cross-origin" />
         <meta
           name="permissions-policy"
-          content="camera=(), microphone=(), geolocation=()"
+          content="camera=(), microphone=(), geolocation=(), payment=()"
         />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, viewport-fit=cover" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -129,267 +151,89 @@ export default function RootLayout({
                   "@type": "Person",
                   "@id": "https://smsu-portfolio.vercel.app/#person",
                   "name": "Syed Muhammad Shayan Uddin",
-                  "alternateName": "SHAYAN.DEVSEC",
+                  "givenName": "Syed Muhammad Shayan",
+                  "familyName": "Uddin",
+                  "alternateName": ["SHAYAN.DEVSEC", "smsu_cyber"],
                   "url": "https://smsu-portfolio.vercel.app/",
-                  "image": "https://smsu-portfolio.vercel.app/og-image.png",
-                  "jobTitle": "Cyber Security Analyst & AI Developer",
-                  "description": "SHAYAN.DEVSEC: Certified Ethical Hacker (CEH) and DevSecOps Expert specializing in AI-driven cybersecurity, penetration testing, vulnerability assessment, and secure web development. Based in Karachi, Pakistan.",
+                  "image": [
+                    "https://smsu-portfolio.vercel.app/og-image.png",
+                    "https://smsu-portfolio.vercel.app/Cyber-Sheild-cyan-purple.png"
+                  ],
+                  "jobTitle": [
+                    "AI Developer",
+                    "Full-Stack Developer",
+                    "Cyber Security Analyst",
+                    "Penetration Tester"
+                  ],
+                  "description": "Syed Muhammad Shayan Uddin (SHAYAN.DEVSEC) is a Certified Ethical Hacker (CEH), AI Developer, Full-Stack Developer, Cyber Security Analyst, and Penetration Tester specializing in offensive and defensive security, AI-driven threat detection, DevSecOps automation, and zero-trust architecture. Based in Karachi, Pakistan.",
                   "knowsAbout": [
-                    {
-                      "@type": "Thing",
-                      "name": "Computer Security",
-                      "url": "https://en.wikipedia.org/wiki/Computer_security"
-                    },
-                    {
-                      "@type": "Thing",
-                      "name": "White Hat (Computer Security)",
-                      "url": "https://en.wikipedia.org/wiki/White_hat_(computer_security)"
-                    },
-                    {
-                      "@type": "Thing",
-                      "name": "Penetration Testing",
-                      "url": "https://en.wikipedia.org/wiki/Penetration_test"
-                    },
-                    "Ethical Hacking",
-                    "Network Security",
-                    "Penetration Testing",
-                    "Vulnerability Assessment",
-                    "Python Programming",
-                    "Kali Linux",
-                    "Metasploit",
-                    "Burp Suite",
-                    "DevSecOps",
-                    "AI Cybersecurity",
-                    "Secure Web Development"
+                    "AI Development",
+                    "Full-Stack Web Development",
+                    "n8n Automation"
                   ],
-                  "hasCredential": [
-                    {
-                      "@type": "EducationalOccupationalCredential",
-                      "credentialCategory": "certification",
-                      "name": "Certified Ethical Hacker (CEH)",
-                      "url": "https://www.eccouncil.org/programs/certified-ethical-hacker-ceh/",
-                      "recognizedBy": {
-                        "@type": "Organization",
-                        "name": "EC-Council"
-                      }
-                    },
-                    {
-                      "@type": "EducationalOccupationalCredential",
-                      "credentialCategory": "certification",
-                      "name": "Cisco Certified Network Associate (CCNA)",
-                      "recognizedBy": {
-                        "@type": "Organization",
-                        "name": "Cisco"
-                      }
-                    }
-                  ],
-                  "sameAs": [
-                    "https://github.com/HACKERxSHAYAN",
-                    "https://linkedin.com/in/syed-muhammad-shayan-uddin",
-                    "https://medium.com/@shayandevsec"
-                  ],
-                  "contactPoint": {
-                    "@type": "ContactPoint",
-                    "email": "shayanuddin4589@gmail.com",
-                    "contactType": "professional"
-                  },
-                  "address": {
-                    "@type": "PostalAddress",
-                    "addressLocality": "Karachi",
-                    "addressCountry": "Pakistan"
-                  }
-                },
-                {
-                  "@type": "BreadcrumbList",
-                  "@id": "https://smsu-portfolio.vercel.app/#breadcrumb",
-                  "itemListElement": [
-                    {
-                      "@type": "ListItem",
-                      "position": 1,
-                      "name": "Home",
-                      "item": "https://smsu-portfolio.vercel.app/"
-                    },
-                    {
-                      "@type": "ListItem",
-                      "position": 2,
-                      "name": "About",
-                      "item": "https://smsu-portfolio.vercel.app/#about"
-                    },
-                    {
-                      "@type": "ListItem",
-                      "position": 3,
-                      "name": "Skills",
-                      "item": "https://smsu-portfolio.vercel.app/#skills"
-                    },
-                    {
-                      "@type": "ListItem",
-                      "position": 4,
-                      "name": "Projects",
-                      "item": "https://smsu-portfolio.vercel.app/#projects"
-                    },
-                    {
-                      "@type": "ListItem",
-                      "position": 5,
-                      "name": "Contact",
-                      "item": "https://smsu-portfolio.vercel.app/#contact"
-                    }
-                  ]
-                },
-                {
-                  "@type": "SiteNavigationElement",
-                  "@id": "https://smsu-portfolio.vercel.app/#navigation",
-                  "name": "Main Navigation",
-                  "item": [
-                    {
-                      "@type": "SiteNavigationElement",
-                      "name": "About",
-                      "url": "https://smsu-portfolio.vercel.app/#about",
-                      "description": "Learn about Syed Muhammad Shayan Uddin's background, certifications, and vision in cybersecurity."
-                    },
-                    {
-                      "@type": "SiteNavigationElement",
-                      "name": "Skills",
-                      "url": "https://smsu-portfolio.vercel.app/#skills",
-                      "description": "Technical arsenal including Kali Linux, Metasploit, Burp Suite, Python, and more."
-                    },
-                    {
-                      "@type": "SiteNavigationElement",
-                      "name": "Projects",
-                      "url": "https://smsu-portfolio.vercel.app/#projects",
-                      "description": "Security projects including Network Vulnerability Scanner, AI Phishing Detector, and Secure Chat Application."
-                    },
-                    {
-                      "@type": "SiteNavigationElement",
-                      "name": "Contact",
-                      "url": "https://smsu-portfolio.vercel.app/#contact",
-                      "description": "Contact Syed Muhammad Shayan Uddin for cybersecurity services and consultations."
-                    }
-                  ]
-                },
-                {
-                  "@type": "WebSite",
-                  "@id": "https://smsu-portfolio.vercel.app/#website",
-                  "url": "https://smsu-portfolio.vercel.app/",
-                  "name": "SHAYAN.DEVSEC | Syed Muhammad Shayan Uddin | Cyber Security & AI Portfolio",
-                  "description": "Official portfolio of Syed Muhammad Shayan Uddin (SHAYAN.DEVSEC). Certified Ethical Hacker, AI Developer, and DevSecOps specialist showcasing advanced security projects and technical write-ups.",
-                  "publisher": {
-                    "@id": "https://smsu-portfolio.vercel.app/#person"
-                  },
-                  "potentialAction": {
-                    "@type": "SearchAction",
-                    "target": "https://smsu-portfolio.vercel.app/?s={search_term_string}",
-                    "query-input": "required name=search_term_string"
-                  }
-                },
-                {
-                  "@type": "WebPage",
-                  "@id": "https://smsu-portfolio.vercel.app/#webpage",
-                  "url": "https://smsu-portfolio.vercel.app/",
-                  "name": "SHAYAN.DEVSEC | Syed Muhammad Shayan Uddin | Cyber Security & AI",
-                  "description": "Official portfolio of Syed Muhammad Shayan Uddin (SHAYAN.DEVSEC). Certified Ethical Hacker, AI Developer, and DevSecOps specialist. Explore advanced security projects and technical write-ups.",
-                  "datePublished": "2024-01-01",
-                  "dateModified": "2024-04-13T01:08:40+05:00",
-                  "author": {
-                    "@id": "https://smsu-portfolio.vercel.app/#person"
-                  },
-                  "publisher": {
-                    "@id": "https://smsu-portfolio.vercel.app/#person"
-                  },
-                   "inLanguage": "en-US"
-                 },
-                 {
-                   "@type": "CreativeWork",
-                   "@id": "https://smsu-portfolio.vercel.app/#network-vulnerability-scanner",
-                   "name": "Network Vulnerability Scanner",
-                   "description": "Python-based automated scanner utilizing Nmap scripts to identify open ports and potential CVEs in local networks. Features real-time vulnerability detection and reporting.",
-                   "url": "https://github.com/HACKERxSHAYAN/Network-vulnerability-scanner-PoC.git",
-                   "creator": {
-                     "@id": "https://smsu-portfolio.vercel.app/#person"
-                   },
-                   "keywords": ["Python", "Nmap", "Automation", "Security", "Vulnerability Scanner"],
-                   "inLanguage": "en-US"
-                 },
-                 {
-                   "@type": "CreativeWork",
-                   "@id": "https://smsu-portfolio.vercel.app/#ai-phishing-detector",
-                   "name": "AI Phishing Detector",
-                   "description": "Machine learning model trained to detect phishing URLs and malicious email headers with 94% accuracy. Uses NLP and pattern recognition techniques.",
-                   "url": "https://github.com/HACKERxSHAYAN/AI-Phishing-Detector-PoC.git",
-                   "creator": {
-                     "@id": "https://smsu-portfolio.vercel.app/#person"
-                   },
-                   "keywords": ["Python", "Scikit-Learn", "AI/ML", "Cyber Defense", "Phishing Detection"],
-                   "inLanguage": "en-US"
-                 },
-{
-                    "@type": "CreativeWork",
-                    "@id": "https://smsu-portfolio.vercel.app/#secure-chat-application",
-                    "name": "Secure Chat Application",
-                    "description": "End-to-end encrypted messaging app built with C++ ensuring zero-knowledge privacy architecture. Features military-grade encryption protocols.",
-                    "url": "https://github.com/HACKERxSHAYAN/Secure-Vault-Chat-E2EE.git",
-                    "creator": {
-                      "@id": "https://smsu-portfolio.vercel.app/#person"
-                    },
-                  "keywords": ["C++", "Cryptography", "Socket Programming", "Security", "E2EE"],
-                  "inLanguage": "en-US"
-                },
-                {
-                  "@type": "ProfessionalService",
-                  "@id": "https://smsu-portfolio.vercel.app/#professional-service",
-                  "name": "SHAYAN.DEVSEC - Cybersecurity & DevSecOps Services",
-                  "description": "Comprehensive cybersecurity services including penetration testing, vulnerability assessment, security auditing, malware removal, network security, and AI-driven security solutions. CEH certified analyst with 3+ years experience.",
-                  "url": "https://smsu-portfolio.vercel.app/",
-                  "provider": {
-                    "@id": "https://smsu-portfolio.vercel.app/#person"
-                  },
-                  "areaServed": {
-                    "@type": "Country",
-                    "name": "PK"
-                  },
-                  "serviceType": [
-                    "Penetration Testing",
-                    "Vulnerability Assessment",
-                    "Security Auditing",
-                    "Malware Removal",
-                    "Network Security",
-                    "DevSecOps Consulting",
-                    "AI Cybersecurity"
-                  ],
-                  "availableLanguage": "en",
+                  "availableLanguage": ["en", "ur"],
                   "hasOfferCatalog": {
                     "@type": "OfferCatalog",
-                    "name": "Cybersecurity Services",
+                    "name": "Cybersecurity & Development Services",
                     "itemListElement": [
-                      {
-                        "@type": "Offer",
-                        "itemOffered": {
-                          "@type": "Service",
-                          "name": "Penetration Testing Services"
-                        }
-                      },
-                      {
-                        "@type": "Offer",
-                        "itemOffered": {
-                          "@type": "Service",
-                          "name": "Vulnerability Assessment"
-                        }
-                      },
-                      {
-                        "@type": "Offer",
-                        "itemOffered": {
-                          "@type": "Service",
-                          "name": "Security Auditing"
-                        }
-                      },
-                      {
-                        "@type": "Offer",
-                        "itemOffered": {
-                          "@type": "Service",
-                          "name": "Malware Removal & Cleanup"
-                        }
-                      }
+                      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Penetration Testing Services" } },
+                      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Vulnerability Assessment" } },
+                      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Security Auditing" } },
+                      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Malware Removal & Cleanup" } },
+                      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "AI Cybersecurity Solutions" } },
+                      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Full-Stack Web Development" } },
+                      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "DevSecOps Automation" } }
                     ]
                   }
+                },
+                {
+                  "@type": "SoftwareSourceCode",
+                  "@id": "https://smsu-portfolio.vercel.app/#network-vulnerability-scanner",
+                  "name": "Network Vulnerability Scanner",
+                  "description": "Python-based automated network vulnerability scanner using Nmap to identify open ports, running service versions, and potential CVEs in local and enterprise networks.",
+                  "url": "https://github.com/HACKERxSHAYAN/Network-vulnerability-scanner-PoC.git",
+                  "version": "1.0.0",
+                  "programmingLanguage": ["Python", "Nmap"],
+                  "creator": { "@id": "https://smsu-portfolio.vercel.app/#person" },
+                  "keywords": ["Python", "Nmap", "Automation", "Security", "Vulnerability Scanner", "Penetration Testing"]
+                },
+                {
+                  "@type": "SoftwareSourceCode",
+                  "@id": "https://smsu-portfolio.vercel.app/#ai-phishing-detector",
+                  "name": "AI Phishing Detector",
+                  "description": "Machine learning phishing URL and malicious email header detector with 94% accuracy. Built by AI Developer Syed Muhammad Shayan Uddin using Python, Scikit-Learn, and NLP.",
+                  "url": "https://github.com/HACKERxSHAYAN/AI-Phishing-Detector-PoC.git",
+                  "version": "1.0.0",
+                  "programmingLanguage": ["Python"],
+                  "creator": { "@id": "https://smsu-portfolio.vercel.app/#person" },
+                  "keywords": ["Python", "Scikit-Learn", "AI/ML", "Cyber Defense", "Phishing Detection", "NLP"]
+                },
+                {
+                  "@type": "SoftwareSourceCode",
+                  "@id": "https://smsu-portfolio.vercel.app/#secure-chat-application",
+                  "name": "Secure Chat Application — E2EE",
+                  "description": "End-to-end encrypted zero-knowledge messaging application built in C++ with military-grade encryption protocols by Full-Stack Developer SHAYAN.DEVSEC.",
+                  "url": "https://github.com/HACKERxSHAYAN/Secure-Vault-Chat-E2EE.git",
+                  "version": "1.0.0",
+                  "programmingLanguage": ["C++"],
+                  "creator": { "@id": "https://smsu-portfolio.vercel.app/#person" },
+                  "keywords": ["C++", "Cryptography", "Socket Programming", "Security", "E2EE", "Zero Trust"]
+                },
+                {
+                  "@type": "FAQPage",
+                  "@id": "https://smsu-portfolio.vercel.app/#faqpage",
+                  "mainEntity": [
+                    {
+                      "@type": "Question",
+                      "name": "Who is SHAYAN.DEVSEC?",
+                      "acceptedAnswer": { "@type": "Answer", "text": "SHAYAN.DEVSEC is the GitHub identity of Syed Muhammad Shayan Uddin — a AI Developer, Full-Stack Developer, Cyber Security Analyst, and CEH-certified Penetration Tester based in Karachi, Pakistan." }
+                    },
+                    {
+                      "@type": "Question",
+                      "name": "What cybersecurity services does SHAYAN.DEVSEC offer?",
+                      "acceptedAnswer": { "@type": "Answer", "text": "SHAYAN.DEVSEC offers penetration testing, vulnerability assessment, security auditing, malware removal, network security, DevSecOps consulting, and AI-driven cybersecurity solutions." }
+                    }
+                  ]
                 }
               ]
             })

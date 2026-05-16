@@ -27,14 +27,14 @@ export default function Hero() {
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
   const socialLinks: { icon?: IconType; isImage?: boolean; color?: string; href: string; label: string }[] = [
-    { icon: FaGithub, color: 'hover:text-white', href: 'https://github.com/HACKERxSHAYAN', label: 'GitHub Profile' },
-    { icon: FaLinkedin, color: 'hover:text-[#0077b5]', href: 'https://linkedin.com/in/syed-muhammad-shayan-uddin', label: 'LinkedIn Profile' },
-    { icon: FaMedium, color: 'text-white hover:text-cyan-400', href: 'https://medium.com/@shayandevsec', label: 'Medium Profile' },
-    { isImage: true, href: '#', label: 'Security Expertise' }
+    { icon: FaGithub, color: 'hover:text-white', href: 'https://github.com/HACKERxSHAYAN', label: 'GitHub Profile of SHAYAN.DEVSEC — Syed Muhammad Shayan Uddin AI Developer Cyber Security Analyst' },
+    { icon: FaLinkedin, color: 'hover:text-[#0077b5]', href: 'https://linkedin.com/in/syed-muhammad-shayan-uddin', label: 'LinkedIn profile of Syed Muhammad Shayan Uddin — Cyber Security Analyst Penetration Tester' },
+    { icon: FaMedium, color: 'text-white hover:text-cyan-400', href: 'https://medium.com/@shayandevsec', label: 'Medium blog of SHAYAN.DEVSEC — cybersecurity and AI development articles by Syed Muhammad Shayan Uddin' },
+    { isImage: true, href: '#', label: 'SHAYAN.DEVSEC Cyber Shield Logo — Syed Muhammad Shayan Uddin AI Developer Cyber Security Analyst Portfolio' }
   ];
 
   return (
-    <section ref={containerRef} className="min-h-screen flex flex-col justify-between items-center relative overflow-hidden px-4 pt-32 pb-8 bg-[#050505]">
+    <section ref={containerRef} aria-label="Hero section of SHAYAN.DEVSEC portfolio — Syed Muhammad Shayan Uddin AI Developer Cyber Security Analyst" className="min-h-screen flex flex-col justify-between items-center relative overflow-hidden px-4 pt-32 pb-8 bg-[#050505]">
       {/* Glowing Orb Effects - GPU accelerated, static on mobile */}
       <motion.div 
         style={{ y }}
@@ -107,10 +107,10 @@ export default function Hero() {
            </span>
          </motion.h1>
 
-         {/* SEO Keywords - Visually Hidden but Crawler Accessible */}
-         <div className="sr-only">
-           SHAYAN.DEVSEC | Elite Cyber Security Analyst & DevSecOps Architect | Certified Ethical Hacker | Penetration Tester Portfolio | Web Developer Karachi
-         </div>
+          {/* SEO Keywords - Visually Hidden but Crawler Accessible */}
+          <div className="sr-only" aria-hidden="true">
+            SHAYAN.DEVSEC — Syed Muhammad Shayan Uddin — AI Developer & Full-Stack Developer & Cyber Security Analyst & Penetration Tester (CEH). Karachi, Pakistan. Penetration testing, vulnerability assessment, network security, ethical hacking, malware removal, DevSecOps, n8n automation, AI-driven cybersecurity, zero-trust architecture. Kali Linux, Metasploit, Burp Suite, Python, C++, C/C++, JavaScript, React, Next.js, Cisco CCNA, Certified Red Teamer, LLM security, phishing detection, secure software engineering, bug bounty hunting.
+          </div>
 
         {/* Gradient Tagline */}
         <motion.div
@@ -208,7 +208,7 @@ export default function Hero() {
               >
                 <Image 
                   src="/Cyber-Sheild-cyan-purple.png" 
-                  alt="SHAYAN.DEVSEC - Cyber Security Analyst Portfolio - Cyber Shield Logo" 
+                  alt="SHAYAN.DEVSEC — Syed Muhammad Shayan Uddin Cyber Shield Logo — AI Developer Cyber Security Analyst Penetration Tester Portfolio" 
                   width={32} 
                   height={32}
                   priority={true}

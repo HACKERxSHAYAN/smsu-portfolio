@@ -17,7 +17,7 @@ export default function About() {
   ];
 
   return (
-    <section id="about" className="py-24 px-4 max-w-7xl mx-auto relative">
+    <section id="about" aria-label="About Syed Muhammad Shayan Uddin — AI Developer Full-Stack Developer Cyber Security Analyst and Penetration Tester" className="py-24 px-4 max-w-7xl mx-auto relative">
       {/* Background Elements */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-cyber-secondary/5 rounded-full blur-[150px] -z-10" />
       <div className="absolute bottom-0 left-0 w-64 h-64 bg-cyber-primary/5 rounded-full blur-[100px] -z-10" />
@@ -31,6 +31,8 @@ export default function About() {
       <div ref={ref} className="grid lg:grid-cols-2 gap-12 items-start">
         {/* Main Bio Card */}
         <motion.div 
+          itemScope
+          itemType="https://schema.org/Person"
           initial={{ opacity: 0, x: -50 }}
           animate={isInView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 0.6 }}
@@ -43,26 +45,28 @@ export default function About() {
             <FaUserSecret size={120} />
           </div>
 
-          <div className="relative z-10">
-            <motion.h3 
-              className="text-2xl font-bold mb-4 text-cyber-primary flex items-center gap-3"
-              initial={{ opacity: 0, x: -20 }}
-              animate={isInView ? { opacity: 1, x: 0 } : {}}
-              transition={{ delay: 0.2 }}
-            >
-              <span className="w-2 h-8 bg-cyber-primary rounded-full" />
-              OPERATOR BRIEFING
-            </motion.h3>
-            
-            <motion.p 
-              className="text-gray-300 mb-8 leading-relaxed text-lg"
-              initial={{ opacity: 0 }}
-              animate={isInView ? { opacity: 1 } : {}}
-              transition={{ delay: 0.3 }}
-            >
-              I am a passionate cybersecurity enthusiast with a vision to integrate Artificial Intelligence into defensive systems. 
-              With a strong foundation in ethical hacking and a CEH certification, I focus on identifying vulnerabilities before they can be exploited.
-            </motion.p>
+            <div className="relative z-10">
+              <motion.h3
+                className="text-2xl font-bold mb-4 text-cyber-primary flex items-center gap-3"
+                initial={{ opacity: 0, x: -20 }}
+                animate={isInView ? { opacity: 1, x: 0 } : {}}
+                transition={{ delay: 0.2 }}
+                itemProp="name"
+              >
+                <span className="w-2 h-8 bg-cyber-primary rounded-full" />
+                OPERATOR BRIEFING
+              </motion.h3>
+
+              <motion.p
+                className="text-gray-300 mb-8 leading-relaxed text-lg"
+                initial={{ opacity: 0 }}
+                animate={isInView ? { opacity: 1 } : {}}
+                transition={{ delay: 0.3 }}
+                itemProp="description"
+              >
+                I am a passionate cybersecurity enthusiast with a vision to integrate Artificial Intelligence into defensive systems.
+                With a strong foundation in ethical hacking and a CEH certification, I focus on identifying vulnerabilities before they can be exploited.
+              </motion.p>
             
             {/* Animated Progress Bars */}
             <div className="space-y-5">

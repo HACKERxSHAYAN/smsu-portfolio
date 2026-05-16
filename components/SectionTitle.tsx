@@ -19,7 +19,7 @@ export default function SectionTitle({ title, subtitle, description, ariaLabel }
         transition={{ duration: 3, repeat: Infinity }}
       />
 
-      <motion.h2 
+      <motion.h2
         initial={{ opacity: 0, y: 30 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.6 }}
@@ -27,7 +27,10 @@ export default function SectionTitle({ title, subtitle, description, ariaLabel }
         aria-label={ariaLabel || title}
       >
         {title}
-        
+
+        {/* SEO Hidden — schema title for crawler context */}
+        <span className="sr-only" aria-hidden="true">{title}</span>
+
         {/* Underline Effect */}
         <motion.div 
           className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-cyber-primary to-cyber-secondary rounded-full"
