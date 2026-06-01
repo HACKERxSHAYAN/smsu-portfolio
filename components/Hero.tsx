@@ -28,8 +28,8 @@ export default function Hero() {
 
   const socialLinks: { icon?: IconType; isImage?: boolean; color?: string; href: string; label: string }[] = [
     { icon: FaGithub, color: 'hover:text-white', href: 'https://github.com/HACKERxSHAYAN', label: 'GitHub Profile of SHAYAN.DEVSEC — Syed Muhammad Shayan Uddin AI Developer Cyber Security Analyst' },
-    { icon: FaLinkedin, color: 'hover:text-[#0077b5]', href: 'https://linkedin.com/in/syed-muhammad-shayan-uddin', label: 'LinkedIn profile of Syed Muhammad Shayan Uddin — Cyber Security Analyst Penetration Tester' },
-    { icon: FaMedium, color: 'text-white hover:text-cyan-400', href: 'https://medium.com/@shayandevsec', label: 'Medium blog of SHAYAN.DEVSEC — cybersecurity and AI development articles by Syed Muhammad Shayan Uddin' },
+    { icon: FaLinkedin, color: 'hover:text-[#0077b5]', href: 'https://www.linkedin.com/in/syed-muhammad-shayanuddin/', label: 'LinkedIn profile of Syed Muhammad Shayan Uddin — Cyber Security Analyst Penetration Tester' },
+    { icon: FaMedium, color: 'text-white hover:text-cyan-400', href: 'https://medium.com/@S-M-Shayan-DevSec', label: 'Medium blog of SHAYAN.DEVSEC — cybersecurity and AI development articles by Syed Muhammad Shayan Uddin' },
     { isImage: true, href: '#', label: 'SHAYAN.DEVSEC Cyber Shield Logo — Syed Muhammad Shayan Uddin AI Developer Cyber Security Analyst Portfolio' }
   ];
 
