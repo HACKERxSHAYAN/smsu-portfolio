@@ -4,7 +4,7 @@
 
 ---
 
-## 🧠 Mission Protocol
+## 🧠 Mission Protocol:
 I am a specialized Security Professional focused on the intersection of **Offensive Security** and **Artificial Intelligence**. Currently executing an Advanced Diploma in Software Engineering with a specialization in AI, I bridge the gap between low-level system exploitation and intelligent defensive automation.
 
 ---
@@ -18,7 +18,7 @@ I am a specialized Security Professional focused on the intersection of **Offens
 
 ---
 
-## ⚔️ Technical Arsenal
+## ⚔️ Technical Arsenal:
 
 ### **🛡️ Cybersecurity Operations**
 * **Offensive:** Penetration Testing, Offensive Security Protocols (OSCP+ track), Metasploit, Burp Suite.
@@ -32,14 +32,14 @@ I am a specialized Security Professional focused on the intersection of **Offens
 
 ---
 
-## 📈 Certificates & Credentials
+## 📈 Certificates & Credentials:
 * **C|EH (Certified Ethical Hacker)**
 * **CCNA (Cisco Certified Network Associate)**
 * **CRTOM (Certified Read Teaming Operation & Management)**
 
 ---
 
-## 🌐 Connect With Me
+## 🌐🙂 Connect With Me On:
 [LinkedIn](www.linkedin.com/in/syed-muhammad-shayanuddin-2267a4333) | [Portfolio](https://smsu-portfolio.vercel.app) | [Discord](im_fallenstar_4589) | [Medium](https://medium.com/@S-M-Shayan-DevSec)
 
 ---
