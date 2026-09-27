@@ -1,9 +1,9 @@
-# Security Hardening Report
+# Security Hardening Report:
 
-## Overview
+## Overview:
 This document outlines the security hardening applied to the Next.js portfolio website to protect against OWASP Top 10 vulnerabilities.
 
-## Security Measures Implemented
+## Security Measures Implemented:
 
 ### 1. ✅ XSS Protection (Cross-Site Scripting)
 **Changes Made:**
@@ -92,7 +92,7 @@ This document outlines the security hardening applied to the Next.js portfolio w
 - Minimal dependencies required
 - Production mode optimizations
 
-## Deployment Checklist for Vercel
+## Deployment Checklist for Vercel:
 
 ### Pre-Deployment
 - [x] Run `npm audit` to check vulnerabilities
@@ -154,9 +154,9 @@ curl -I http://localhost:3000
 - `Contact.tsx` - Input validation
 - `Index.html` - Launcher page
 
-## Conclusion
+## Conclusion:
 
-The website is now hardened against common OWASP Top 10 attacks:
+The website is hardened from against common OWASP Top 10 attacks:
 - ✅ Injection (XSS, SQL)
 - ✅ Broken Authentication
 - ✅ Sensitive Data Exposure
