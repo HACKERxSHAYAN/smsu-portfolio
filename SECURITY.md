@@ -19,13 +19,13 @@ This document outlines the security hardening applied to the Next.js portfolio w
 - `lib/security.ts` - Created sanitization functions
 - `next.config.js` - CSP headers
 
-### 2. ✅ CSRF Protection
+### 2. ✅ CSRF Protection:
 **Changes Made:**
 - Added CSRF token generation utility
 - Form submissions use POST method
 - Same-origin validation in middleware
 
-### 3. ✅ Secure HTTP Headers
+### 3. ✅ Secure HTTP Headers:
 **Changes Made:**
 - **X-Frame-Options**: DENY (prevents clickjacking)
 - **X-Content-Type-Options**: nosniff (prevents MIME sniffing)
@@ -39,7 +39,7 @@ This document outlines the security hardening applied to the Next.js portfolio w
 - `next.config.js` - Added all security headers
 - `middleware.ts` - Added runtime header injection
 
-### 4. ✅ Input Validation
+### 4. ✅ Input Validation:
 **Changes Made:**
 - Email format validation with regex
 - Name validation (letters, spaces, hyphens only)
@@ -51,7 +51,7 @@ This document outlines the security hardening applied to the Next.js portfolio w
 - `Contact.tsx` - Added form validation
 - `lib/security.ts` - Validation utilities
 
-### 5. ✅ Rate Limiting
+### 5. ✅ Rate Limiting:
 **Changes Made:**
 - Implemented in-memory rate limiter
 - 5 requests per minute per IP
@@ -60,7 +60,7 @@ This document outlines the security hardening applied to the Next.js portfolio w
 **Files Modified:**
 - `middleware.ts` - Rate limiting logic
 
-### 6. ✅ Environment Variables
+### 6. ✅ Environment Variables:
 **Changes Made:**
 - Added `.gitignore` to prevent .env exposure
 - No hardcoded secrets in codebase
