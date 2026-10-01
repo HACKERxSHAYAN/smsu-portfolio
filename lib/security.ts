@@ -122,15 +122,29 @@ export function generateCSRFToken(): string {
   return Array.from(array, byte => byte.toString(16).padStart(2, '0')).join('');
 }
 
-// Validate URL to prevent open redirect attacks
-export function isValidURL(url: string): boolean {
+// Validate URL to prevent open redirect attacks.
+// ISOMORPHIC: safe to call from both server (API routes, middleware) and client.
+// Accepts absolute URLs only when they match an explicit allowlist of origins;
+// everything else (relative paths, protocol-relative URLs) is permitted.
+export function isValidURL(url: string, allowedOrigins: string[] = []): boolean {
+  if (typeof url !== 'string' || !url) return false;
+
+  // Reject protocol-relative URLs like "//evil.com" (open-redirect vector)
+  if (url.startsWith('//')) return false;
+
+  // Relative paths (e.g. "/dashboard", "/api/contact") are always safe.
+  if (url.startsWith('/')) return true;
+
+  // Absolute URL: parse and validate the origin against the allowlist.
   try {
     const parsed = new URL(url);
-    // Only allow relative URLs or same-origin URLs
-    return parsed.origin === window.location.origin || url.startsWith('/');
+    // Only http/https schemes are allowed.
+    if (parsed.protocol !== 'http:' && parsed.protocol !== 'https:') return false;
+    // If no allowlist is provided, reject all absolute URLs (fail-closed).
+    if (allowedOrigins.length === 0) return false;
+    return allowedOrigins.includes(parsed.origin);
   } catch {
-    // If URL parsing fails, check if it's a relative path
-    return url.startsWith('/') && !url.startsWith('//');
+    return false;
   }
 }
 

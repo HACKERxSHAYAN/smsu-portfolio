@@ -112,10 +112,12 @@ export const metadata: Metadata = {
     title: "SHAYAN.DEVSEC | Cyber Security & AI Developer",
     statusBarStyle: "black-translucent",
   },
+  // Verification tokens are wired from environment variables so dummy
+  // placeholder strings never reach search crawlers. Google is the only
+  // configured provider; yandex/yandex/yahoo are omitted when unconfigured
+  // (undefined keys are stripped by Next.js metadata serialization).
   verification: {
-    google: "your-google-verification-code",
-    yandex: "your-yandex-verification-code",
-    yahoo: "your-yahoo-verification-code",
+    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
   },
   category: "technology",
   classification: "Cybersecurity, AI Development, Full-Stack Development, Penetration Testing",

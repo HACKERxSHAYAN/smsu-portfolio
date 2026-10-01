@@ -2,7 +2,9 @@ import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://smsu-portfolio.vercel.app';
-  const now = new Date('2026-05-17T00:00:00+05:00');
+  // Dynamically generate the current timestamp so crawlers always see a
+  // fresh lastModified value (no stale hardcoded dates).
+  const now = new Date();
 
   return [
     {

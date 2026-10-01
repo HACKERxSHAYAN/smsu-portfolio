@@ -5,50 +5,7 @@ import { useState } from "react";
 import SectionTitle from "./SectionTitle";
 import { FaPaperPlane, FaCheck, FaEnvelope, FaUser, FaComment, FaExclamationTriangle } from "react-icons/fa";
 import { useRef } from "react";
-
-// Input validation functions (client-side)
-function sanitizeInput(input: string): string {
-  if (typeof input !== 'string') return '';
-  return input
-    .trim()
-    .replace(/[\x00-\x1F\x7F]/g, '')
-    .replace(/[<>]/g, '')
-    .substring(0, 5000);
-}
-
-function isValidEmail(email: string): boolean {
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  return emailRegex.test(email) && email.length <= 254;
-}
-
-function isValidName(name: string): boolean {
-  if (!name || typeof name !== 'string') return false;
-  if (name.length < 2 || name.length > 100) return false;
-  const nameRegex = /^[a-zA-Z\s\-']+$/;
-  return nameRegex.test(name);
-}
-
-function isValidMessage(message: string): boolean {
-  if (!message || typeof message !== 'string') return false;
-  if (message.length < 10 || message.length > 5000) return false;
-  
-  const suspiciousPatterns = [
-    /<script/i,
-    /javascript:/i,
-    /onerror=/i,
-    /onclick=/i,
-    /onload=/i,
-    /eval\(/i,
-    /document\.cookie/i,
-    /window\.location/i,
-  ];
-  
-  for (const pattern of suspiciousPatterns) {
-    if (pattern.test(message)) return false;
-  }
-  
-  return true;
-}
+import { sanitizeInput, isValidEmail, isValidName, isValidMessage } from '@/lib/security';
 
 interface FormErrors {
   name?: string;
@@ -60,6 +17,7 @@ export default function Contact() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const [formStatus, setFormStatus] = useState<'idle' | 'submitting' | 'success'>('idle');
+  const [errorMessage, setErrorMessage] = useState<string>('');
   const [errors, setErrors] = useState<FormErrors>({});
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
 
@@ -84,20 +42,46 @@ export default function Contact() {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setErrors({});
-    
+    setErrorMessage('');
+
     if (!validateForm()) {
       return;
     }
-    
+
     setFormStatus('submitting');
-    
-    setTimeout(() => {
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: sanitizeInput(formData.name),
+          email: sanitizeInput(formData.email),
+          message: sanitizeInput(formData.message),
+        }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        // Surface server-side validation errors inline where possible.
+        if (data.field && errors[data.field as keyof FormErrors] === undefined) {
+          setErrors(prev => ({ ...prev, [data.field]: 'Invalid input' }));
+        }
+        throw new Error(data.error || 'Transmission failed');
+      }
+
       setFormStatus('success');
       setFormData({ name: '', email: '', message: '' });
-    }, 1500);
+    } catch (err) {
+      setFormStatus('idle');
+      setErrorMessage(err instanceof Error ? err.message : 'Transmission failed. Please try again.');
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -154,6 +138,18 @@ export default function Contact() {
             animate={{ borderColor: ['rgba(0,243,255,0.3)', 'rgba(189,0,255,0.3)', 'rgba(0,243,255,0.3)'] }}
             transition={{ duration: 3, repeat: Infinity }}
           />
+
+          {formStatus !== 'success' && errorMessage && (
+            <motion.div
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="relative z-10 mb-6 flex items-start gap-3 bg-red-500/10 border border-red-500/40 text-red-300 px-4 py-3 rounded-lg font-mono text-sm"
+              role="alert"
+            >
+              <FaExclamationTriangle size={16} className="mt-0.5 flex-shrink-0" aria-hidden="true" />
+              <span>{errorMessage}</span>
+            </motion.div>
+          )}
 
           {formStatus === 'success' ? (
             <motion.div initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} className="text-center py-16 relative z-10">

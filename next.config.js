@@ -2,8 +2,8 @@
 const nextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
+  productionBrowserSourceMaps: false,
   experimental: {
-    viewTransition: true,
     optimizePackageImports: ['react-icons', 'framer-motion'],
   },
   images: {
